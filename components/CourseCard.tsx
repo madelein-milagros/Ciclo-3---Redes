@@ -31,7 +31,8 @@ const CourseCard: React.FC<CourseCardProps> = ({ course, isExpanded, onToggle })
         style={{ 
           backgroundImage: isExpanded ? 'none' : `linear-gradient(135deg, ${COLORS.COURSE_START}, ${COLORS.COURSE_END})`,
           backgroundColor: isExpanded ? COLORS.COURSE_END : 'transparent',
-          ringColor: COLORS.ACCENT + '44'
+          // Corregimos ringColor usando una variable CSS que Tailwind entiende para 'ring'
+          ['--tw-ring-color' as any]: COLORS.ACCENT + '44'
         }}
       >
         {/* Card Header (Always visible) */}
