@@ -2,7 +2,6 @@
 import { Course, Checkpoint } from './types';
 
 export const COLORS = {
-  // Versiones más claras y vibrantes de los rojos originales
   COURSE_START: '#a81d3a',
   COURSE_END: '#830c24',
   CHECKPOINT_START: '#c41e45',
@@ -33,10 +32,6 @@ export const COURSES: Course[] = [
       {
         label: "Ver curso en Cisco NetAcad",
         url: "https://www.netacad.com/courses/fundamentos-de-linux?courseLang=es-XL&instance_id=2924e557-a2f0-4a87-826e-cda20c0e5e6e"
-      },
-      {
-        label: "Ver curso en NetDevGroup",
-        url: "https://www.netdevgroup.com/online/courses/open-source/linux-essentials"
       }
     ],
     description: "Comandos básicos de Linux, gestión de usuarios, permisos, procesos y administración del sistema.",
@@ -83,7 +78,7 @@ export const COURSES: Course[] = [
   }
 ];
 
-export const CICLO_CHECKPOINT: Checkpoint = {
-  title: "Misión Final del Ciclo III",
-  content: "Implementa una red con enrutamiento dinámico (OSPF) en Packet Tracer, configura servidores Linux y escribe un script en Python que monitoree el estado de los dispositivos de red."
+export const FINAL_MISSION: Checkpoint = {
+  title: "Misión Final: Integración de Redes",
+  content: "Implementa una red corporativa con OSPF, servidores Linux administrados por consola y scripts de automatización en Python."
 };
