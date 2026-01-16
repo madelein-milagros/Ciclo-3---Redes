@@ -84,6 +84,6 @@ export const COURSES: Course[] = [
 ];
 
 export const CICLO_CHECKPOINT: Checkpoint = {
-  title: "Checkpoint del Ciclo 3",
+  title: "Misión Final del Ciclo III",
   content: "Implementa una red con enrutamiento dinámico (OSPF) en Packet Tracer, configura servidores Linux y escribe un script en Python que monitoree el estado de los dispositivos de red."
 };
