@@ -37,9 +37,9 @@ const App: React.FC = () => {
 
   const { pathPoints, positionedItems, roadWidth } = useMemo(() => {
     const spacing = isMobile ? 150 : 220; 
-    const amplitude = isMobile ? 40 : 90; 
-    const baselineY = isMobile ? 130 : 180; // Subimos un poco la carretera en móvil
-    const strokeWidth = isMobile ? 50 : 80;
+    const amplitude = isMobile ? 35 : 90; 
+    const baselineY = isMobile ? 120 : 180;
+    const strokeWidth = isMobile ? 45 : 80;
     
     const path: {x: number, y: number}[] = [];
     const items: any[] = [];
@@ -108,7 +108,7 @@ const App: React.FC = () => {
             className="absolute z-30 cursor-pointer group"
             style={{ 
               left: totalWidth - (isMobile ? 100 : 250), 
-              top: isMobile ? 130 : 180, 
+              top: isMobile ? 120 : 180, 
               transform: 'translateY(-50%)' 
             }}
             onClick={() => setShowFinalModal(true)}
@@ -120,18 +120,18 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-100 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] z-50 shrink-0 overflow-y-auto max-h-[45vh] md:max-h-none">
-        <div className="max-w-6xl mx-auto p-4 md:p-8 flex flex-col gap-4 md:gap-6">
-          <div className="flex items-center gap-3 md:gap-6">
-            <div className="shrink-0 w-10 h-10 md:w-16 md:h-16 bg-[#a81d3a] text-white rounded-lg md:rounded-[1.25rem] flex items-center justify-center font-black text-lg md:text-3xl shadow-lg transform -rotate-1">
+      <footer className="bg-white border-t border-gray-100 shadow-[0_-10px_40px_rgba(0,0,0,0.12)] z-50 shrink-0 overflow-y-auto max-h-[52vh] md:max-h-none">
+        <div className="max-w-6xl mx-auto p-5 md:p-8 flex flex-col gap-5 md:gap-6">
+          <div className="flex items-center gap-4 md:gap-6">
+            <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 bg-[#a81d3a] text-white rounded-xl md:rounded-[1.25rem] flex items-center justify-center font-black text-2xl md:text-3xl shadow-lg transform -rotate-1">
               {activeCourse.id}
             </div>
             <div className="flex-grow">
               <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-0.5 md:mb-1">
-                <div className="bg-[#1e293b] text-white text-[7px] md:text-[10px] px-1.5 py-0.5 rounded font-black uppercase tracking-widest">CICLO {activeCourse.ciclo}</div>
-                <h2 className="text-base md:text-2xl font-black text-gray-900 uppercase tracking-tight leading-none">{activeCourse.title}</h2>
+                <div className="bg-[#1e293b] text-white text-[8px] md:text-[10px] px-1.5 py-0.5 rounded font-black uppercase tracking-widest">CICLO {activeCourse.ciclo}</div>
+                <h2 className="text-lg md:text-2xl font-black text-gray-900 uppercase tracking-tight leading-none">{activeCourse.title}</h2>
               </div>
-              <p className="text-[8px] md:text-[11px] font-bold text-gray-400 uppercase tracking-widest leading-tight">{activeCourse.officialName}</p>
+              <p className="text-[9px] md:text-[11px] font-bold text-gray-400 uppercase tracking-widest leading-tight">{activeCourse.officialName}</p>
             </div>
           </div>
 
@@ -139,24 +139,31 @@ const App: React.FC = () => {
             {activeCourse.description}
           </p>
 
-          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 md:gap-4 pb-2 md:pb-0">
-             <a href={activeCourse.links[0]?.url} target="_blank" className="h-11 md:h-14 px-6 md:px-10 bg-[#1e293b] text-white rounded-xl md:rounded-2xl flex items-center justify-center gap-2 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] shadow-md hover:bg-black transition-all active:scale-95">
-                CONTENIDO <span className="text-xs md:text-lg">↗</span>
+          <div className="flex flex-col gap-5 pb-2 md:pb-0">
+             <a href={activeCourse.links[0]?.url} target="_blank" className="h-12 md:h-14 w-full md:w-fit px-6 md:px-10 bg-[#1e293b] text-white rounded-xl md:rounded-2xl flex items-center justify-center gap-2 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] shadow-md hover:bg-black transition-all active:scale-95">
+                VER CONTENIDO <span className="text-xs md:text-lg">↗</span>
              </a>
              
-             <div className="flex items-center gap-2 md:gap-3 overflow-x-auto pb-1 scrollbar-hide">
-                <a href={activeCourse.youtubeUrl} target="_blank" className="shrink-0 h-11 md:h-14 px-3 md:px-6 bg-red-50 text-red-600 border-2 border-red-100 rounded-xl md:rounded-2xl flex items-center gap-2 text-[9px] md:text-[10px] font-black uppercase tracking-widest">
-                   <span className="text-base md:text-lg">📺</span> <span className="hidden xs:inline">TUTORIAL</span>
-                </a>
-                
-                <a href={activeCourse.linkedinUrl} target="_blank" className="shrink-0 h-11 md:h-14 px-3 md:px-6 bg-blue-50 text-blue-600 border-2 border-blue-100 rounded-xl md:rounded-2xl flex items-center gap-2 text-[9px] md:text-[10px] font-black uppercase tracking-widest">
-                   <span className="text-base md:text-lg">🔗</span> <span className="hidden xs:inline">LOGRO</span>
-                </a>
+             <div className="relative">
+               <div className="flex items-center gap-3 md:gap-4 overflow-x-auto pb-6 scrollbar-hide -mx-1 px-1 snap-x">
+                  <a href={activeCourse.youtubeUrl} target="_blank" className="snap-start shrink-0 h-12 md:h-14 px-5 md:px-7 bg-red-50 text-red-600 border-2 border-red-200 rounded-xl md:rounded-2xl flex items-center gap-2.5 text-[10px] md:text-[11px] font-black uppercase tracking-widest active:bg-red-100 transition-all shadow-sm">
+                     <span className="text-lg md:text-xl">📺</span> <span>TUTORIAL</span>
+                  </a>
+                  
+                  <a href={activeCourse.linkedinUrl} target="_blank" className="snap-start shrink-0 h-12 md:h-14 px-5 md:px-7 bg-blue-50 text-blue-600 border-2 border-blue-200 rounded-xl md:rounded-2xl flex items-center gap-2.5 text-[10px] md:text-[11px] font-black uppercase tracking-widest active:bg-blue-100 transition-all shadow-sm">
+                     <span className="text-lg md:text-xl">🔗</span> <span>LOGRO</span>
+                  </a>
 
-                <div className="shrink-0 h-11 md:h-14 px-3 md:px-6 bg-gray-50 border-2 border-gray-100 rounded-xl md:rounded-2xl flex items-center gap-2">
-                  <span className="text-base md:text-lg">🏆</span>
-                  <span className="text-[8px] md:text-[10px] font-black text-gray-400 uppercase tracking-widest truncate max-w-[100px] sm:max-w-none">{activeCourse.certification}</span>
-                </div>
+                  <div className="snap-start shrink-0 h-12 md:h-14 px-5 md:px-7 bg-amber-50 border-2 border-amber-200 rounded-xl md:rounded-2xl flex items-center gap-2.5 shadow-sm">
+                    <span className="text-lg md:text-xl">🏆</span>
+                    <div className="flex flex-col">
+                        <span className="text-[7px] text-amber-600 font-black uppercase tracking-[0.2em] leading-none mb-0.5">INSIGNIA</span>
+                        <span className="text-[9px] md:text-[11px] font-black text-amber-800 uppercase tracking-tight truncate max-w-[140px] md:max-w-none">{activeCourse.certification}</span>
+                    </div>
+                  </div>
+               </div>
+               {/* Sutil indicador visual de que hay más contenido a la derecha en móviles */}
+               <div className="absolute right-0 top-0 bottom-6 w-12 bg-gradient-to-l from-white via-white/40 to-transparent pointer-events-none md:hidden"></div>
              </div>
           </div>
         </div>
@@ -181,7 +188,6 @@ const App: React.FC = () => {
       <style>{`
         @keyframes pop-in { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .animate-pop-in { animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        @media (max-width: 400px) { .xs\\:inline { display: inline; } }
       `}</style>
     </div>
   );
