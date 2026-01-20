@@ -8,11 +8,11 @@ interface CycleMilestoneProps {
 const CycleMilestone: React.FC<CycleMilestoneProps> = ({ number }) => {
   return (
     <div className="relative flex flex-col items-center">
-      <div className="absolute -top-10 md:-top-12 bg-gray-900 text-white px-3 py-1 md:px-4 md:py-1 rounded-full text-[8px] md:text-[9px] font-black uppercase tracking-widest border-2 border-white shadow-lg whitespace-nowrap">
+      <div className="absolute -top-7 bg-gray-900 text-white px-2 py-0.5 rounded-full text-[6px] md:text-[7px] font-black uppercase tracking-widest border border-white shadow-md whitespace-nowrap z-40 transform -translate-y-0.5">
         CICLO {number}
       </div>
-      <div className="w-14 h-14 md:w-20 md:h-20 bg-white border-[4px] md:border-[6px] border-gray-900 rounded-[1.25rem] md:rounded-[1.5rem] flex items-center justify-center shadow-[6px_6px_0px_rgba(0,0,0,0.1)] md:shadow-[10px_10px_0px_rgba(0,0,0,0.1)] transform rotate-3">
-        <span className="text-xl md:text-3xl font-black text-gray-900 italic tracking-tighter">
+      <div className="w-9 h-9 md:w-11 md:h-11 bg-white border-[3px] border-gray-900 rounded-lg md:rounded-xl flex items-center justify-center shadow-[3px_3px_0px_rgba(0,0,0,0.1)] transform rotate-2 hover:rotate-0 transition-all duration-300">
+        <span className="text-base md:text-lg font-black text-gray-900 italic tracking-tighter leading-none">
           {number}
         </span>
       </div>

@@ -14,7 +14,7 @@ const YT_BASE = "https://www.youtube.com/results?search_query=tecsup+redes+";
 const LI_BASE = "https://www.linkedin.com/feed/?shareActive=true&text=";
 
 const createLinkedInUrl = (courseTitle: string, ciclo: number) => {
-  const message = `¡Sigo avanzando! 🚀 Acabo de completar el curso de "${courseTitle}" correspondiente al Ciclo ${ciclo} de la carrera de Redes y Comunicaciones en Tecsup. #Administración de Redes y Comunicaciones`;
+  const message = `¡Sigo avanzando! 🚀 Acabo de completar el curso de "${courseTitle}" correspondiente al Ciclo ${ciclo} de la carrera de Redes y Comunicaciones en Tecsup. #Administración de Redes y Comunicaciones #Tecsup2026 #Networking`;
   return LI_BASE + encodeURIComponent(message);
 };
 
@@ -214,6 +214,6 @@ export const COURSES: Course[] = [
 ];
 
 export const FINAL_MISSION: Checkpoint = {
-  title: "Misión Final: Graduación",
-  content: "Convertirse en un Profesional Certificado en Administración de Redes y Comunicaciones, liderando la transformación digital."
+  title: "Meta Final: Especialista Tecsup 2026",
+  content: "Convertirse en un líder tecnológico certificado por Tecsup, dominando la infraestructura de red mundial y la ciberseguridad avanzada."
 };
