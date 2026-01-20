@@ -194,41 +194,42 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      {/* Optimized Responsive Footer */}
-      <footer className="relative bg-white border-t-[6px] border-[#a81d3a] shadow-[0_-20px_60px_rgba(0,0,0,0.2)] z-50 shrink-0 overflow-y-auto scrollbar-hide rounded-t-[2.5rem] md:rounded-none max-h-[55vh] md:max-h-none">
+      {/* Optimized Responsive Footer con Área de Seguridad para Móviles */}
+      <footer className="relative bg-white border-t-[4px] md:border-t-[6px] border-[#a81d3a] shadow-[0_-20px_60px_rgba(0,0,0,0.25)] z-50 shrink-0 overflow-y-auto scrollbar-hide rounded-t-[2rem] md:rounded-none max-h-[65vh] md:max-h-none">
         {/* Mobile Drag Handle */}
-        <div className="md:hidden w-full flex justify-center pt-3 pb-1 sticky top-0 bg-white/80 backdrop-blur-sm z-10">
-          <div className="w-12 h-1.5 bg-gray-200 rounded-full"></div>
+        <div className="md:hidden w-full flex justify-center pt-3 pb-2 sticky top-0 bg-white/95 backdrop-blur-md z-10">
+          <div className="w-10 h-1 bg-gray-200 rounded-full"></div>
         </div>
 
-        <div key={activeCourseId} className="max-w-7xl mx-auto px-6 py-4 md:px-12 md:py-10 animate-fade-slide">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-start">
+        <div key={activeCourseId} className="max-w-7xl mx-auto px-5 pt-2 pb-6 md:px-12 md:py-10 animate-fade-slide">
+          {/* Contenedor con Padding inferior extra (pb-24) para evitar cortes por botones del sistema */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-12 items-start pb-24 md:pb-0">
             
-            {/* Header Info - Compact on Mobile */}
-            <div className="md:col-span-5 space-y-3 md:space-y-4">
-              <div className="flex items-center gap-4 md:gap-6">
-                <div className="shrink-0 w-16 h-16 md:w-28 md:h-28 bg-gradient-to-br from-[#a81d3a] to-[#830c24] text-white rounded-[1.25rem] md:rounded-[1.8rem] flex items-center justify-center font-black text-3xl md:text-6xl shadow-xl border-4 border-white ring-4 ring-red-50/50 transition-all">
+            {/* Header Info - Compacto */}
+            <div className="md:col-span-5 space-y-2 md:space-y-4">
+              <div className="flex items-center gap-3 md:gap-6">
+                <div className="shrink-0 w-12 h-12 md:w-28 md:h-28 bg-gradient-to-br from-[#a81d3a] to-[#830c24] text-white rounded-xl md:rounded-[1.8rem] flex items-center justify-center font-black text-xl md:text-6xl shadow-lg border-[3px] md:border-4 border-white ring-2 md:ring-4 ring-red-50/50">
                   {activeCourse.id}
                 </div>
                 <div className="min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="bg-[#1e293b] text-white text-[7px] md:text-[10px] px-2 md:px-3 py-0.5 md:py-1 rounded-full font-black uppercase tracking-widest shadow-sm">CICLO {activeCourse.ciclo}</span>
-                    <span className="bg-red-50 text-[#a81d3a] text-[7px] md:text-[10px] px-2 md:px-3 py-0.5 md:py-1 rounded-full font-black uppercase tracking-widest border border-red-100 flex items-center gap-1">
+                  <div className="flex items-center gap-1.5 md:gap-2 mb-0.5 md:mb-1">
+                    <span className="bg-[#1e293b] text-white text-[6px] md:text-[10px] px-1.5 py-0.5 rounded-full font-black uppercase tracking-widest">CICLO {activeCourse.ciclo}</span>
+                    <span className="bg-red-50 text-[#a81d3a] text-[6px] md:text-[10px] px-1.5 py-0.5 rounded-full font-black uppercase tracking-widest border border-red-100 flex items-center gap-1">
                       {CATEGORY_ICONS[activeCourse.category]} {activeCourse.category.toUpperCase()}
                     </span>
                   </div>
-                  <h2 className="text-lg md:text-4xl font-black text-gray-900 uppercase tracking-tighter leading-tight mb-0.5 md:mb-1.5 line-clamp-2">{activeCourse.title}</h2>
-                  <p className="text-[8px] md:text-[12px] font-black text-gray-400 uppercase tracking-[0.2em] truncate">{activeCourse.officialName}</p>
+                  <h2 className="text-sm md:text-4xl font-black text-gray-900 uppercase tracking-tighter leading-tight line-clamp-2">{activeCourse.title}</h2>
+                  <p className="text-[6px] md:text-[12px] font-black text-gray-400 uppercase tracking-widest truncate">{activeCourse.officialName}</p>
                 </div>
               </div>
-              <p className="text-gray-700 text-[12px] md:text-[19px] font-bold leading-snug md:leading-tight border-l-[4px] md:border-l-[6px] border-[#a81d3a] pl-3 md:pl-5 italic py-1.5 md:py-2 bg-red-50/30 rounded-r-xl md:rounded-r-2xl pr-4 shadow-sm">
+              <p className="text-gray-700 text-[10px] md:text-[19px] font-bold leading-tight border-l-[3px] md:border-l-[6px] border-[#a81d3a] pl-3 md:pl-5 italic py-1 md:py-2 bg-red-50/10 rounded-r-lg md:rounded-r-2xl pr-3 shadow-sm">
                 "{activeCourse.description}"
               </p>
             </div>
 
-            {/* Radar Dominios (Desktop Only) */}
+            {/* Radar Dominios (Solo Desktop) */}
             <div className="md:col-span-3 hidden md:block space-y-4">
-               <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">Impacto de Habilidades</p>
+               <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Impacto Habilidades</p>
                <div className="grid grid-cols-1 gap-4">
                   {[
                     { label: 'INFRAESTRUCTURA', val: skillImpact.infr, color: '#3b82f6', icon: '🌐' },
@@ -236,61 +237,61 @@ const App: React.FC = () => {
                     { label: 'SEGURIDAD', val: skillImpact.segu, color: '#ef4444', icon: '🛡️' },
                     { label: 'VIRTUALIZACIÓN', val: skillImpact.virt, color: '#10b981', icon: '☁️' }
                   ].map((s) => (
-                    <div key={s.label} className="space-y-1.5">
-                      <div className="flex justify-between text-[9px] font-black uppercase text-gray-500 px-0.5">
+                    <div key={s.label} className="space-y-1">
+                      <div className="flex justify-between text-[8px] font-black uppercase text-gray-400">
                         <span>{s.icon} {s.label}</span> 
                         <span style={{ color: s.color }}>{s.val}%</span>
                       </div>
-                      <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden shadow-inner">
-                        <div className="h-full transition-all duration-1000 ease-out" style={{ width: `${s.val}%`, backgroundColor: s.color }}></div>
+                      <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-full transition-all duration-1000" style={{ width: `${s.val}%`, backgroundColor: s.color }}></div>
                       </div>
                     </div>
                   ))}
                </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="md:col-span-4 flex flex-col gap-4 md:gap-6 mt-2 md:mt-0 pb-4 md:pb-0">
-               <div className="space-y-2 md:space-y-3">
-                  <p className="text-[9px] md:text-[10px] font-black text-gray-400 uppercase tracking-widest px-1 flex items-center justify-between">
+            {/* CTA Buttons - Ajuste crítico de altura y visibilidad */}
+            <div className="md:col-span-4 flex flex-col gap-3 md:gap-6 mt-1 md:mt-0">
+               <div className="space-y-1 md:space-y-3">
+                  <p className="text-[7px] md:text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center justify-between px-1">
                     <span>Inscripción Oficial 🎯</span>
                     <span className="text-[#a81d3a] animate-pulse">● ACTIVO</span>
                   </p>
-                  <div className="grid grid-cols-1 gap-3 md:gap-4">
+                  <div className="grid grid-cols-1 gap-2 md:gap-4">
                     {activeCourse.links.map((link, idx) => (
                       <a 
                         key={idx} 
                         href={link.url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="group relative h-14 md:h-24 px-6 md:px-8 overflow-hidden bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#1e293b] text-white rounded-[1.2rem] md:rounded-[1.5rem] flex items-center justify-between shadow-xl transition-all hover:scale-[1.04] active:scale-95 border border-white/10 hover:border-[#a81d3a]/60 animate-neon-pulse"
+                        className="group relative h-11 md:h-24 px-4 md:px-8 overflow-hidden bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#1e293b] text-white rounded-lg md:rounded-[1.5rem] flex items-center justify-between shadow-lg active:scale-95 border border-white/5 animate-neon-pulse"
                       >
-                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:animate-shine-fast pointer-events-none"></div>
+                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shine-fast pointer-events-none"></div>
                         
                         <div className="flex flex-col min-w-0 z-10">
-                           <span className="text-[7px] md:text-[10px] text-red-400 font-black uppercase tracking-[0.25em] mb-0.5 md:mb-1 group-hover:text-white transition-colors">ACCESO CURSO</span>
-                           <span className="text-[12px] md:text-[20px] font-black uppercase tracking-wider truncate drop-shadow-lg">
+                           <span className="text-[5px] md:text-[10px] text-red-400 font-black uppercase tracking-widest">MATRÍCULA</span>
+                           <span className="text-[10px] md:text-[20px] font-black uppercase tracking-wide truncate">
                              {link.label}
                            </span>
                         </div>
                         
-                        <div className="shrink-0 w-9 h-9 md:w-16 md:h-16 bg-white/10 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:bg-[#a81d3a] group-hover:shadow-[0_0_35px_rgba(168,29,58,0.9)] transition-all duration-500 z-10 border border-white/10">
-                           <svg className="w-5 h-5 md:w-8 md:h-8 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                        <div className="shrink-0 w-7 h-7 md:w-16 md:h-16 bg-white/10 rounded-md md:rounded-2xl flex items-center justify-center group-hover:bg-[#a81d3a] transition-all z-10">
+                           <svg className="w-3.5 h-3.5 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                         </div>
                       </a>
                     ))}
                   </div>
                </div>
                
-               <div className="flex gap-3 md:gap-4">
+               <div className="flex gap-2 md:gap-4">
                   {activeCourse.youtubeUrl && (
-                    <a href={activeCourse.youtubeUrl} target="_blank" rel="noopener noreferrer" className="flex-[2] h-12 md:h-16 bg-white border-2 border-red-100 text-[#a81d3a] rounded-xl md:rounded-2xl flex items-center justify-center gap-2 md:gap-3 hover:bg-red-50 transition-all shadow-md active:scale-95 font-black text-[9px] md:text-[12px] uppercase tracking-widest group">
-                       <span className="text-xl md:text-2xl transition-transform group-hover:scale-125">📺</span> CLASE
+                    <a href={activeCourse.youtubeUrl} target="_blank" rel="noopener noreferrer" className="flex-[2] h-10 md:h-16 bg-white border-2 border-red-50 text-[#a81d3a] rounded-lg md:rounded-2xl flex items-center justify-center gap-2 hover:bg-red-50 transition-all shadow-sm active:scale-95 font-black text-[8px] md:text-[12px] uppercase tracking-widest">
+                       <span className="text-base md:text-2xl">📺</span> CLASE
                     </a>
                   )}
                   {activeCourse.linkedinUrl && (
-                    <a href={activeCourse.linkedinUrl} target="_blank" rel="noopener noreferrer" className="flex-1 h-12 md:h-16 bg-white border-2 border-blue-100 text-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center hover:bg-blue-50 transition-all shadow-md active:scale-95 group">
-                       <span className="text-xl md:text-2xl transition-transform group-hover:rotate-12">🔗</span>
+                    <a href={activeCourse.linkedinUrl} target="_blank" rel="noopener noreferrer" className="flex-1 h-10 md:h-16 bg-white border-2 border-blue-50 text-blue-600 rounded-lg md:rounded-2xl flex items-center justify-center hover:bg-blue-50 transition-all shadow-sm active:scale-95">
+                       <span className="text-base md:text-2xl">🔗</span>
                     </a>
                   )}
                </div>
@@ -298,6 +299,9 @@ const App: React.FC = () => {
 
           </div>
         </div>
+        
+        {/* Indicador de más contenido inferior (Solo móviles) */}
+        <div className="md:hidden sticky bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
       </footer>
 
       <style>{`
@@ -306,23 +310,23 @@ const App: React.FC = () => {
           30% { transform: translateX(120%) skewX(-20deg); }
           100% { transform: translateX(120%) skewX(-20deg); }
         }
-        .group-hover\\:animate-shine-fast { animation: shine-fast 1.8s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+        .group-hover\\:animate-shine-fast { animation: shine-fast 1.8s infinite; }
         
         @keyframes neon-pulse {
-          0%, 100% { box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); border-color: rgba(255,255,255,0.05); }
-          50% { box-shadow: 0 10px 40px -5px rgba(168,29,58,0.25); border-color: rgba(168,29,58,0.25); }
+          0%, 100% { box-shadow: 0 5px 15px -5px rgba(0,0,0,0.4); }
+          50% { box-shadow: 0 5px 25px -5px rgba(168,29,58,0.2); }
         }
-        .animate-neon-pulse { animation: neon-pulse 3s infinite ease-in-out; }
+        .animate-neon-pulse { animation: neon-pulse 3s infinite; }
 
         @keyframes pop-in { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .animate-pop-in { animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
         @keyframes fade-slide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-slide { animation: fade-slide 0.4s ease-out; }
+        .animate-fade-slide { animation: fade-slide 0.3s ease-out; }
         
         @keyframes float {
           0%, 100% { transform: translate(-50%, -50%) translateY(0); }
-          50% { transform: translate(-50%, -50%) translateY(-18px); }
+          50% { transform: translate(-50%, -50%) translateY(-15px); }
         }
         
         ::-webkit-scrollbar { display: none; }
@@ -330,20 +334,7 @@ const App: React.FC = () => {
 
         @media (max-width: 767px) {
           footer {
-            box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
-          }
-          footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 30px;
-            background: linear-gradient(to bottom, white, transparent);
-            pointer-events: none;
-            z-index: 10;
-            border-top-left-radius: 2.5rem;
-            border-top-right-radius: 2.5rem;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.2);
           }
         }
       `}</style>
@@ -351,15 +342,15 @@ const App: React.FC = () => {
       {/* Graduation Modal */}
       {showFinalModal && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-6">
-          <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-lg" onClick={() => setShowFinalModal(false)}></div>
-          <div className="relative bg-white w-full max-w-sm rounded-[3.5rem] shadow-2xl overflow-hidden animate-pop-in border-[12px] border-[#a81d3a]">
-            <div className="bg-[#a81d3a] p-12 text-center text-white">
-               <div className="text-8xl mb-6">🎓</div>
-               <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter italic leading-none">{FINAL_MISSION.title}</h3>
+          <div className="absolute inset-0 bg-gray-900/90 backdrop-blur-md" onClick={() => setShowFinalModal(false)}></div>
+          <div className="relative bg-white w-full max-w-sm rounded-[3rem] shadow-2xl overflow-hidden animate-pop-in border-[10px] border-[#a81d3a]">
+            <div className="bg-[#a81d3a] p-10 text-center text-white">
+               <div className="text-7xl mb-4">🎓</div>
+               <h3 className="text-xl md:text-3xl font-black uppercase italic leading-tight">{FINAL_MISSION.title}</h3>
             </div>
-            <div className="p-10 text-center">
-               <p className="text-gray-900 text-lg md:text-xl font-bold leading-relaxed mb-10 italic">"{FINAL_MISSION.content}"</p>
-               <button onClick={() => setShowFinalModal(false)} className="w-full h-16 bg-gray-900 text-white rounded-2xl font-black text-[13px] uppercase tracking-widest shadow-2xl active:scale-95 transition-all">FINALIZAR RUTA</button>
+            <div className="p-8 text-center">
+               <p className="text-gray-900 text-base md:text-xl font-bold mb-8 italic">"{FINAL_MISSION.content}"</p>
+               <button onClick={() => setShowFinalModal(false)} className="w-full h-14 bg-gray-900 text-white rounded-xl font-black text-[12px] uppercase tracking-widest active:scale-95">FINALIZAR RUTA</button>
             </div>
           </div>
         </div>
