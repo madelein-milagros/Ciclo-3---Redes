@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Course } from '../types';
-import { COLORS } from '../constants';
 
 interface CourseNodeProps {
   course: Course;
@@ -10,51 +9,38 @@ interface CourseNodeProps {
   position: { x: number; y: number };
 }
 
-const CourseNode: React.FC<CourseNodeProps> = ({ course, isActive, onSelect, position }) => {
+const CourseNode: React.FC<CourseNodeProps> = ({ course, isActive, onSelect }) => {
   return (
-    <div 
-      className="absolute transition-all duration-500 ease-in-out z-20"
-      style={{ 
-        left: `${position.x}%`, 
-        top: `${position.y}%`,
-        transform: 'translate(-50%, -50%)'
-      }}
-    >
+    <div className="relative flex flex-col items-center group">
+      {/* Banner de Categoría (Solo cuando está activo) */}
+      {isActive && (
+        <div className="absolute -top-14 z-20">
+          <div className="bg-[#1e293b] text-white px-4 py-1.5 rounded-lg text-[8px] font-black uppercase tracking-widest shadow-lg border-2 border-white/10 animate-bounce">
+            ADMINISTRACIÓN
+          </div>
+          <div className="w-2 h-2 bg-[#1e293b] rotate-45 mx-auto -mt-1 border-r border-b border-white/10"></div>
+        </div>
+      )}
+
+      {/* Hito Cuadrado */}
       <button
         onClick={onSelect}
-        className="group relative flex flex-col items-center outline-none touch-none"
+        className={`relative w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] flex items-center justify-center transition-all duration-500 border-[6px] outline-none
+          ${isActive 
+            ? 'bg-[#a81d3a] border-white scale-110 shadow-[0_20px_40px_rgba(168,29,58,0.4)] z-10' 
+            : 'bg-white border-[#1e293b] shadow-[8px_8px_0px_rgba(0,0,0,0.1)] hover:rotate-6 hover:shadow-[12px_12px_0px_rgba(0,0,0,0.15)] z-0'}`}
       >
-        {/* Aura de selección */}
-        {isActive && (
-          <div 
-            className="absolute inset-0 rounded-full animate-ping opacity-20 scale-125 bg-red-500"
-          />
-        )}
-        
-        {/* Marcador de Estación - Dinámico */}
-        <div 
-          className={`relative w-7 h-7 xs:w-8 xs:h-8 md:w-14 md:h-14 rounded-lg md:rounded-2xl flex items-center justify-center transition-all duration-300 shadow-sm md:shadow-xl border-2 md:border-4
-            ${isActive ? 'rotate-0 scale-110' : 'rotate-12 scale-100'}`}
-          style={{ 
-            backgroundColor: isActive ? COLORS.ACCENT : 'white',
-            borderColor: isActive ? 'white' : '#1f2937'
-          }}
-        >
-          <span className={`text-[10px] md:text-xl font-black ${isActive ? 'text-white' : 'text-gray-900'}`}>
-            {course.id}
-          </span>
-        </div>
-
-        {/* Etiqueta solo en escritorio para no congestionar el móvil */}
-        <div 
-          className={`hidden lg:block absolute -bottom-10 whitespace-nowrap px-3 py-1 rounded-md text-[9px] font-black uppercase tracking-widest transition-all duration-300 pointer-events-none
-            ${isActive 
-              ? 'bg-gray-900 text-white opacity-100 shadow-xl translate-y-0' 
-              : 'bg-white text-gray-400 opacity-0 group-hover:opacity-100 translate-y-1 border border-gray-100'}`}
-        >
-          {course.title.split(' ')[0]}
-        </div>
+        <span className={`text-2xl md:text-3xl font-black italic tracking-tighter ${isActive ? 'text-white' : 'text-[#1e293b]'}`}>
+          {course.id}
+        </span>
       </button>
+
+      {/* Título en hover (si no está activo) */}
+      {!isActive && (
+        <div className="absolute top-24 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap bg-white px-3 py-1 rounded-md shadow-md border border-gray-100">
+           <span className="text-[9px] font-black uppercase tracking-widest text-gray-500">{course.title}</span>
+        </div>
+      )}
     </div>
   );
 };

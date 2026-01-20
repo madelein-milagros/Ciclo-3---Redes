@@ -1,6 +1,7 @@
 
 export interface Course {
   id: number;
+  ciclo: number;
   title: string;
   officialName: string;
   links: {
@@ -9,6 +10,8 @@ export interface Course {
   }[];
   description: string;
   certification: string;
+  youtubeUrl?: string;
+  linkedinUrl?: string;
 }
 
 export interface Checkpoint {
