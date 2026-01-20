@@ -14,7 +14,7 @@ const YT_BASE = "https://www.youtube.com/results?search_query=tecsup+redes+";
 const LI_BASE = "https://www.linkedin.com/feed/?shareActive=true&text=";
 
 const createLinkedInUrl = (courseTitle: string, ciclo: number) => {
-  const message = `¡Sigo avanzando! 🚀 Acabo de completar el curso de "${courseTitle}" correspondiente al Ciclo ${ciclo} de la carrera de Redes y Comunicaciones en Tecsup. #Administración de Redes y Comunicaciones #Tecsup2026 #Networking`;
+  const message = `¡Sigo avanzando! 🚀 Acabo de completar el curso de "${courseTitle}" del Ciclo ${ciclo} en Tecsup. Especializándome en Redes y Comunicaciones. #Tecsup2026 #Networking`;
   return LI_BASE + encodeURIComponent(message);
 };
 
@@ -23,9 +23,13 @@ export const COURSES: Course[] = [
   {
     id: 1, ciclo: 1,
     title: "Soporte de Hardware y Software",
-    officialName: "Conceptos Básico de Hardware de Computadora",
-    links: [{ label: "NetAcad - Hardware Basics", url: "https://www.netacad.com/es/courses/computer-hardware-basics?courseLang=es-XL" }],
-    description: "Fundamentos esenciales sobre los componentes físicos de una computadora y soporte técnico inicial.",
+    officialName: "IT Essentials",
+    category: "Infraestructura",
+    links: [
+      { label: "NetAcad IT Essentials", url: "https://www.netacad.com" },
+      { label: "Guía de Hardware", url: "https://en.wikipedia.org/wiki/Computer_hardware" }
+    ],
+    description: "Mantenimiento preventivo y correctivo de hardware y software base.",
     certification: "Cisco Networking Academy",
     youtubeUrl: YT_BASE + "hardware",
     linkedinUrl: createLinkedInUrl("Soporte de Hardware y Software", 1)
@@ -34,186 +38,183 @@ export const COURSES: Course[] = [
   {
     id: 2, ciclo: 2,
     title: "Informática Aplicada (Redes)",
-    officialName: "Introduccion a la Ciberseguridad",
-    links: [{ label: "NetAcad - Ciberseguridad", url: "https://www.netacad.com/es/courses/introduction-to-cybersecurity?courseLang=es-XL&instance_id=0d50742d-45ba-4a91-87b7-3a10282bcd2c" }],
-    description: "Primeros pasos en la protección del mundo digital y conceptos de seguridad en red.",
+    officialName: "Networking Basics",
+    category: "Programación",
+    links: [{ label: "Intro a Redes", url: "https://www.netacad.com" }],
+    description: "Fundamentos de redes y lógica aplicada al flujo de datos.",
     certification: "Cisco Networking Academy",
-    youtubeUrl: YT_BASE + "cybersecurity",
+    youtubeUrl: YT_BASE + "informatica+aplicada",
     linkedinUrl: createLinkedInUrl("Informática Aplicada (Redes)", 2)
   },
   {
     id: 3, ciclo: 2,
     title: "Programación básica para redes",
-    officialName: "Fundamentos de Python 1",
-    links: [{ label: "NetAcad - Python Essentials 1", url: "https://www.netacad.com/courses/python-essentials-1?courseLang=es-XL&instance_id=8e897e8c-3cc4-43be-8440-485e0e356a51" }],
-    description: "Lógica de programación orientada a la automatización de tareas en infraestructura de red.",
+    officialName: "Python Essentials 1",
+    category: "Programación",
+    links: [
+      { label: "Documentación Python", url: "https://docs.python.org/3/" },
+      { label: "Examen PCEP Prep", url: "https://pythoninstitute.org/pcep" }
+    ],
+    description: "Desarrollo de scripts iniciales para la gestión de red.",
     certification: "PCEP - Python Institute",
-    youtubeUrl: YT_BASE + "python+redes",
+    youtubeUrl: YT_BASE + "python+1",
     linkedinUrl: createLinkedInUrl("Programación básica para redes", 2)
   },
   {
     id: 4, ciclo: 2,
+    title: "Electrónica y Hardware",
+    officialName: "Computer Electronics",
+    category: "Infraestructura",
+    links: [{ label: "Simulador Tinkercad", url: "https://www.tinkercad.com/" }],
+    description: "Principios de electrónica digital y componentes de hardware avanzado.",
+    certification: "Tecsup Certified",
+    youtubeUrl: YT_BASE + "electronica",
+    linkedinUrl: createLinkedInUrl("Electrónica y Hardware", 2)
+  },
+  {
+    id: 5, ciclo: 2,
     title: "Implementación de Redes",
-    officialName: "Networking Basics & Packet Tracer",
+    officialName: "CCNA: Introduction to Networks",
+    category: "Infraestructura",
     links: [
-      { label: "Conceptos Básicos", url: "https://www.netacad.com/es/courses/networking-basics?courseLang=es-XL" },
-      { label: "Packet Tracer", url: "https://www.netacad.com/courses/getting-started-cisco-packet-tracer?courseLang=es-XL" },
-      { label: "Explorando Redes", url: "https://www.netacad.com/courses/networking-basics?courseLang=es-XL" }
+      { label: "CCNA 1 NetAcad", url: "https://www.netacad.com" },
+      { label: "Descarga Packet Tracer", url: "https://www.netacad.com/portal/resources/packet-tracer" },
+      { label: "Cisco Learning Network", url: "https://learningnetwork.cisco.com" }
     ],
-    description: "Configuración inicial de dispositivos y simulación avanzada en el entorno de Cisco.",
-    certification: "Cisco Packet Tracer Badge",
-    youtubeUrl: YT_BASE + "packet+tracer",
+    description: "Configuración física y lógica de dispositivos de interconexión.",
+    certification: "Cisco CCNA Badge",
+    youtubeUrl: YT_BASE + "ccna+1",
     linkedinUrl: createLinkedInUrl("Implementación de Redes", 2)
   },
-  // CICLO 3
-  {
-    id: 5, ciclo: 3,
-    title: "Programación Movil para Redes",
-    officialName: "Python Essentials 2",
-    links: [{ label: "NetAcad - Python 2", url: "https://www.netacad.com/courses/python-essentials-2?courseLang=es-XL" }],
-    description: "Dominio avanzado de Python para el desarrollo de scripts y aplicaciones móviles de red.",
-    certification: "Cisco Networking Academy",
-    youtubeUrl: YT_BASE + "python+advanced",
-    linkedinUrl: createLinkedInUrl("Programación Movil para Redes", 3)
-  },
+  // CICLO 3 (TU ENFOQUE)
   {
     id: 6, ciclo: 3,
-    title: "Sistemas Operativos de Código Abierto",
-    officialName: "Fundamentos de Linux",
+    title: "Programación Móvil para Redes",
+    officialName: "Python Essentials 2",
+    category: "Programación",
     links: [
-      { label: "NetAcad Linux", url: "https://www.netacad.com/courses/fundamentos-de-linux?courseLang=es-XL" },
-      { label: "Linux Essentials", url: "https://www.netdevgroup.com/online/courses/open-source/linux-essentials" },
-      { label: "LPI Certification", url: "https://www.lpi.org/our-certifications/linux-essentials-overview" }
+      { label: "Python 2 Advanced", url: "https://www.python.org" },
+      { label: "Cisco DevNet SDK", url: "https://developer.cisco.com" },
+      { label: "API Reference", url: "https://docs.python.org/3/library/index.html" }
     ],
-    description: "Administración profesional de sistemas operativos basados en el kernel Linux.",
-    certification: "LPI Linux Essentials",
-    youtubeUrl: YT_BASE + "linux+essentials",
-    linkedinUrl: createLinkedInUrl("Sistemas Operativos de Código Abierto", 3)
+    description: "Desarrollo avanzado de aplicaciones y lógica de automatización.",
+    certification: "Cisco Certified Specialist",
+    youtubeUrl: YT_BASE + "python+2",
+    linkedinUrl: createLinkedInUrl("Programación Móvil para Redes", 3)
   },
   {
     id: 7, ciclo: 3,
-    title: "Protocolos de Enrutamiento",
-    officialName: "Networking Essentials",
-    links: [{ label: "Networking Essentials", url: "https://www.netacad.com/courses/networking-essentials?courseLang=es-XL" }],
-    description: "Configuración y gestión de protocolos como OSPF y RIP en redes empresariales.",
-    certification: "Cisco Networking Academy",
-    youtubeUrl: YT_BASE + "routing+protocols",
-    linkedinUrl: createLinkedInUrl("Protocolos de Enrutamiento", 3)
+    title: "Sistemas Operativos Libres",
+    officialName: "Linux Essentials",
+    category: "Virtualización",
+    links: [
+      { label: "NDG Linux Essentials", url: "https://www.netdevgroup.com" },
+      { label: "Linux Journey (Guía)", url: "https://linuxjourney.com/" },
+      { label: "Simulador de Terminal", url: "https://bellard.org/jslinux/" }
+    ],
+    description: "Administración básica del kernel Linux y comandos de terminal.",
+    certification: "LPI Linux Essentials",
+    youtubeUrl: YT_BASE + "linux",
+    linkedinUrl: createLinkedInUrl("Sistemas Operativos Libres", 3)
   },
   {
     id: 8, ciclo: 3,
+    title: "Administración de SS.OO.",
+    officialName: "System Administration",
+    category: "Virtualización",
+    links: [
+      { label: "SysAdmin Resource", url: "https://www.netacad.com" },
+      { label: "Servidores Wiki", url: "https://en.wikipedia.org/wiki/System_administration" }
+    ],
+    description: "Gestión de usuarios, permisos y servicios en entornos de servidor.",
+    certification: "Tecsup Professional Admin",
+    youtubeUrl: YT_BASE + "sysadmin",
+    linkedinUrl: createLinkedInUrl("Administración de SS.OO.", 3)
+  },
+  {
+    id: 9, ciclo: 3,
+    title: "Protocolos de Enrutamiento",
+    officialName: "Routing Essentials",
+    category: "Infraestructura",
+    links: [
+      { label: "Routing Prep Guide", url: "https://www.netacad.com" },
+      { label: "RFC Editor (Protocolos)", url: "https://www.rfc-editor.org/" },
+      { label: "CCNA Routing Docs", url: "https://www.cisco.com" }
+    ],
+    description: "Dominio de tablas de enrutamiento y convergencia de red.",
+    certification: "Cisco Routing Badge",
+    youtubeUrl: YT_BASE + "enrutamiento",
+    linkedinUrl: createLinkedInUrl("Protocolos de Enrutamiento", 3)
+  },
+  {
+    id: 10, ciclo: 3,
     title: "Matemáticas para Redes",
-    officialName: "Introduction to Data Science",
-    links: [{ label: "Data Science Intro", url: "https://www.netacad.com/courses/introduction-data-science?courseLang=es-XL" }],
-    description: "Aplicación de estadística y análisis de datos para optimizar el tráfico de red.",
-    certification: "Cisco Data Science",
-    youtubeUrl: YT_BASE + "data+science",
+    officialName: "Data Science & Math",
+    category: "Programación",
+    links: [{ label: "Khan Academy Math", url: "https://www.khanacademy.org" }],
+    description: "Análisis de tráfico mediante estadística y probabilidad aplicada.",
+    certification: "Cisco Data Science Specialist",
+    youtubeUrl: YT_BASE + "matematicas+redes",
     linkedinUrl: createLinkedInUrl("Matemáticas para Redes", 3)
   },
-  // CICLO 4
+  // CICLO 4, 5, 6
   {
-    id: 9, ciclo: 4,
+    id: 11, ciclo: 4,
     title: "Cableado y Fibra Óptica",
-    officialName: "Residential/MDU Cabling Solutions",
-    links: [{ label: "CommScope Training", url: "https://www.commscopetraining.com/courses/cabling/wr9100/residentialmdu-cabling-solutions" }],
-    description: "Diseño e implementación física de infraestructuras de cableado estructurado.",
-    certification: "CommScope WR9100",
-    youtubeUrl: YT_BASE + "fiber+optic",
+    officialName: "Structured Cabling Solutions",
+    category: "Infraestructura",
+    links: [{ label: "CommScope Training", url: "https://www.commscopetraining.com" }],
+    description: "Instalación física y certificación de medios de transmisión.",
+    certification: "CommScope Certified",
+    youtubeUrl: YT_BASE + "cableado+fibra",
     linkedinUrl: createLinkedInUrl("Cableado y Fibra Óptica", 4)
   },
   {
-    id: 10, ciclo: 4,
-    title: "Arquitectura de Servidores",
-    officialName: "Fundamentos de Scrum",
-    links: [{ label: "ScrumStudy Certification", url: "https://www.scrumstudy.com/certification/certification-hierarchy" }],
-    description: "Gestión de proyectos ágiles aplicada a la implementación de centros de datos.",
-    certification: "Scrum Fundamentals Certified",
-    youtubeUrl: YT_BASE + "server+architecture",
-    linkedinUrl: createLinkedInUrl("Arquitectura de Servidores", 4)
-  },
-  {
-    id: 11, ciclo: 4,
+    id: 13, ciclo: 4,
     title: "Ethical Hacking",
-    officialName: "Hacker Ético",
-    links: [{ label: "NetAcad Ethical Hacker", url: "https://www.netacad.com/courses/ethical-hacker?courseLang=es-XL" }],
-    description: "Identificación de vulnerabilidades y defensa proactiva contra ciberataques.",
-    certification: "Cisco Cybersecurity",
-    youtubeUrl: YT_BASE + "ethical+hacking",
+    officialName: "Cybersecurity & Pentesting",
+    category: "Seguridad",
+    links: [
+      { label: "TryHackMe Portal", url: "https://tryhackme.com/" },
+      { label: "OWASP Project", url: "https://owasp.org/" }
+    ],
+    description: "Identificación y defensa de vulnerabilidades en sistemas.",
+    certification: "Cisco CyberOps associate",
+    youtubeUrl: YT_BASE + "hacking+etico",
     linkedinUrl: createLinkedInUrl("Ethical Hacking", 4)
   },
   {
-    id: 12, ciclo: 4,
-    title: "Servicios de Red",
-    officialName: "ICANN DNS Fundamentals",
-    links: [{ label: "ICANN DNS Course", url: "https://www.icann.org/en/beginners/courses-and-learning" }],
-    description: "Administración de servicios DNS y gobernanza de identificadores en internet.",
-    certification: "ICANN Certified",
-    youtubeUrl: YT_BASE + "dns+services",
-    linkedinUrl: createLinkedInUrl("Servicios de Red", 4)
-  },
-  // CICLO 5
-  {
-    id: 13, ciclo: 5,
-    title: "Programación IoT",
-    officialName: "Exploración de IoT con Packet Tracer",
-    links: [
-      { label: "IoT Intro", url: "https://www.netacad.com/courses/introduction-iot?courseLang=es-XL" },
-      { label: "IoT Exploring", url: "https://www.netacad.com/courses/exploring-iot-cisco-packet-tracer?courseLang=es-XL" },
-      { label: "Cisco IoT Portal", url: "https://www.cisco.com/c/es_mx/solutions/internet-of-things/overview.html" }
-    ],
-    description: "Conectividad de objetos y transformación digital mediante sensores y automatización.",
-    certification: "Cisco IoT Professional",
-    youtubeUrl: YT_BASE + "iot+packet+tracer",
-    linkedinUrl: createLinkedInUrl("Programación IoT", 5)
-  },
-  {
-    id: 14, ciclo: 5,
+    id: 16, ciclo: 5,
     title: "Seguridad Perimetral",
-    officialName: "Fortinet Security Journey",
+    officialName: "Fortinet NSE",
+    category: "Seguridad",
     links: [
-      { label: "Threat Landscape", url: "https://training.fortinet.com/local/staticpage/view.php?page=library_introduction-to-the-threat-landscape" },
-      { label: "Technical Intro", url: "https://training.fortinet.com/local/staticpage/view.php?page=library_technical-introduction-to-the-threat-landscape" },
-      { label: "FortiTraining Portal", url: "https://training.fortinet.com/" }
+      { label: "Fortinet Training", url: "https://training.fortinet.com" },
+      { label: "NSE Exam Prep", url: "https://training.fortinet.com" }
     ],
-    description: "Configuración de firewalls de próxima generación y defensa de bordes corporativos.",
-    certification: "Fortinet NSE 1 & 2",
-    youtubeUrl: YT_BASE + "fortinet+security",
+    description: "Protección de bordes de red mediante firewalls avanzados.",
+    certification: "Fortinet NSE Certified",
+    youtubeUrl: YT_BASE + "fortinet",
     linkedinUrl: createLinkedInUrl("Seguridad Perimetral", 5)
   },
   {
-    id: 15, ciclo: 5,
-    title: "Redes Convergentes",
-    officialName: "PBXact Essentials",
-    links: [{ label: "Sangoma PBXact", url: "https://training.sangoma.com/course/view.php?id=2" }],
-    description: "Implementación de telefonía IP y comunicaciones unificadas corporativas.",
-    certification: "Sangoma Certified Associate",
-    youtubeUrl: YT_BASE + "converged+networks",
-    linkedinUrl: createLinkedInUrl("Redes Convergentes", 5)
-  },
-  // CICLO 6
-  {
-    id: 16, ciclo: 6,
+    id: 18, ciclo: 6,
     title: "Virtualización y Cloud",
-    officialName: "Cloud and Virtualization Concepts",
-    links: [{ label: "NDG Cloud Course", url: "https://www.netdevgroup.com/online/courses/virtualization/cloud-and-virtualization-concepts" }],
-    description: "Conceptos de nube híbrida, hipervisores y gestión de infraestructura virtual.",
-    certification: "NDG Cloud Certification",
-    youtubeUrl: YT_BASE + "virtualization",
+    officialName: "Cloud Computing Mastery",
+    category: "Virtualización",
+    links: [
+      { label: "AWS Academy", url: "https://aws.amazon.com/" },
+      { label: "Azure Learner", url: "https://portal.azure.com" },
+      { label: "GCP Training", url: "https://cloud.google.com/training" }
+    ],
+    description: "Infraestructura como servicio y despliegue en la nube.",
+    certification: "Cloud Solutions Architect",
+    youtubeUrl: YT_BASE + "cloud+computing",
     linkedinUrl: createLinkedInUrl("Virtualización y Cloud", 6)
-  },
-  {
-    id: 17, ciclo: 6,
-    title: "Comunicaciones Inalámbricas",
-    officialName: "Wireless Technologies",
-    links: [{ label: "Wireless Fundamentals", url: "https://www.netacad.com/es/courses/computer-hardware-basics?courseLang=es-XL" }],
-    description: "Estándares WiFi, radiofrecuencia y despliegue de redes WLAN empresariales.",
-    certification: "Cisco Wireless Mastery",
-    youtubeUrl: YT_BASE + "wireless+networks",
-    linkedinUrl: createLinkedInUrl("Comunicaciones Inalámbricas", 6)
   }
 ];
 
 export const FINAL_MISSION: Checkpoint = {
-  title: "Meta Final: Especialista Tecsup 2026",
-  content: "Convertirse en un líder tecnológico certificado por Tecsup, dominando la infraestructura de red mundial y la ciberseguridad avanzada."
+  title: "Especialista Tecsup 2026",
+  content: "Convertirse en un líder tecnológico capaz de diseñar y asegurar la infraestructura digital que mueve al mundo."
 };
