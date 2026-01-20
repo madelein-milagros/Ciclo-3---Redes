@@ -26,7 +26,7 @@ npm run dev
    git add .
    git commit -m "Mi Roadmap Final"
    git branch -M main
-   git remote add origin https://github.com/madelein-milagros/Ciclo-3---Redes.git
+   git remote add origin https://github.com/TU-USUARIO/Ciclo-3---Redes.git
    git push -u origin main
    ```
 
