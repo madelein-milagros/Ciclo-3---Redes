@@ -1,40 +1,37 @@
-# 🚀 Mi Roadmap Profesional - Tecsup 2026
 
-Este proyecto es una aplicación web interactiva diseñada para visualizar la ruta de aprendizaje de la carrera de **Administración de Redes y Comunicaciones**. Optimizado para móviles y escritorio con un diseño de alto impacto.
+# 🚀 Roadmap Profesional Tecsup 2026 - Redes
 
-## ✨ Características
-- **Tecsup 2026 Ready**: Personalizado con la identidad de la institución y meta profesional.
-- **Ultra-Responsivo**: Diseñado específicamente para verse increíble en celulares.
-- **Interactividad**: Mapa serpenteante con decoraciones técnicas y efectos visuales.
-- **Social**: Enlaces directos para compartir progresos en LinkedIn.
+Este proyecto es una aplicación web interactiva diseñada para visualizar la ruta de aprendizaje de la carrera de **Redes y Comunicaciones**. Optimizado con una estética de alta gama para dispositivos móviles y escritorio.
 
-📦 Instalación y Ejecución
-Clona el repositorio:
-git clone https://github.com/madelein-milagros/Ciclo-3---Redes.git
--Instala las dependencias:
-npm install
--Ejecuta en modo desarrollo:
-npm run dev
+## ✨ Características clave
+- **Pista Tecnológica**: Mapa dinámico con 6 ciclos académicos.
+- **Botones Call-to-Action**: Enlaces de inscripción con efectos neón y brillo premium.
+- **Mobile First**: Experiencia de usuario fluida en cualquier smartphone.
+- **Progreso Visual**: Radar de habilidades dinámico según el curso seleccionado.
 
-## 🚀 Cómo desplegarlo (Gratis)
+## 🚀 Despliegue en 3 Minutos (Gratis)
 
-### Paso 1: Subir a GitHub
-1. Crea un repositorio en tu GitHub llamado `roadmap-tecsup`.
-2. Ejecuta estos comandos en tu terminal:
+### 1. Preparar en GitHub
+1. Crea un repositorio en GitHub llamado `roadmap-redes`.
+2. Sube tus archivos:
    ```bash
    git init
    git add .
-   git commit -m "Mi Roadmap Final"
+   git commit -m "Versión Final Premium"
    git branch -M main
-   git remote add origin https://github.com/TU-USUARIO/Ciclo-3---Redes.git
+   git remote add origin https://github.com/TU_USUARIO/roadmap-redes.git
    git push -u origin main
    ```
 
-### Paso 2: Desplegar en Vercel
-1. Entra a [Vercel](https://vercel.com).
-2. Conecta tu GitHub.
-3. Importa el repositorio `roadmap-tecsup`.
-4. ¡Listo! Vercel te dará una URL pública para que la abras en tu celular.
+### 2. Desplegar en Vercel
+1. Entra a [Vercel](https://vercel.com) e inicia sesión con GitHub.
+2. Haz clic en **"Add New"** > **"Project"**.
+3. Selecciona tu repositorio `roadmap-redes`.
+4. En "Framework Preset", asegúrate de que diga **Vite**.
+5. Haz clic en **"Deploy"**.
+
+### 3. ¡Listo!
+Vercel te dará una URL (ej. `roadmap-redes.vercel.app`) para que la compartas en tu LinkedIn o la abras en tu celular.
 
 ---
-Creado para la carrera de **Administración de Redes y Comunicaciones**. ¡Nos vemos en el éxito en 2026! 🌐🛡️
+Especialidad de **Redes y Comunicaciones**. ¡El futuro es hoy! 🌐🛡️
