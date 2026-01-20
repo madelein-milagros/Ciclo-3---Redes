@@ -10,7 +10,7 @@ Este proyecto es una aplicación web interactiva diseñada para visualizar la ru
 
 📦 Instalación y Ejecución
 Clona el repositorio:
-git clone https://github.com/madelein-milagros/TU_REPOSITORIO.git
+git clone https://github.com/madelein-milagros/Ciclo-3---Redes.git
 Instala las dependencias:
 npm install
 Ejecuta en modo desarrollo:
@@ -26,7 +26,7 @@ npm run dev
    git add .
    git commit -m "Mi Roadmap Final"
    git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/roadmap-tecsup.git
+   git remote add origin https://github.com/madelein-milagros/Ciclo-3---Redes.git
    git push -u origin main
    ```
 
