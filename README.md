@@ -32,7 +32,7 @@ Este proyecto es una aplicación web interactiva de alto impacto visual diseñad
    git add .
    git commit -m "feat: roadmap interactivo finalizado"
    git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/TU_REPOSO.git
+   git remote add origin https://github.com/madelein-milagros/Ciclo-3---Redes.git
    git push -u origin main
    ```
 
