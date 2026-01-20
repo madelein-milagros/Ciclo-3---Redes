@@ -21,6 +21,13 @@ const TECH_DECORATIONS = [
   { icon: '📊', label: 'Data' },
 ];
 
+const CATEGORY_ICONS: Record<string, string> = {
+  'Infraestructura': '🌐',
+  'Programación': '🐍',
+  'Seguridad': '🛡️',
+  'Virtualización': '☁️'
+};
+
 const App: React.FC = () => {
   const [activeCourseId, setActiveCourseId] = useState<number>(COURSES[0].id);
   const [showFinalModal, setShowFinalModal] = useState<boolean>(false);
@@ -187,44 +194,51 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      {/* Premium Footer with Ultra-Call-to-Action */}
-      <footer className="relative bg-white border-t-[6px] border-[#a81d3a] shadow-[0_-15px_50px_rgba(0,0,0,0.15)] z-50 shrink-0 max-h-[45vh] md:max-h-none overflow-y-auto scrollbar-hide">
-        <div className="max-w-7xl mx-auto px-6 py-6 md:px-12 md:py-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+      {/* Optimized Responsive Footer */}
+      <footer className="relative bg-white border-t-[6px] border-[#a81d3a] shadow-[0_-20px_60px_rgba(0,0,0,0.2)] z-50 shrink-0 overflow-y-auto scrollbar-hide rounded-t-[2.5rem] md:rounded-none max-h-[55vh] md:max-h-none">
+        {/* Mobile Drag Handle */}
+        <div className="md:hidden w-full flex justify-center pt-3 pb-1 sticky top-0 bg-white/80 backdrop-blur-sm z-10">
+          <div className="w-12 h-1.5 bg-gray-200 rounded-full"></div>
+        </div>
+
+        <div key={activeCourseId} className="max-w-7xl mx-auto px-6 py-4 md:px-12 md:py-10 animate-fade-slide">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-start">
             
-            {/* Active Course Badge & Text */}
-            <div className="md:col-span-5 space-y-4">
-              <div className="flex items-center gap-6">
-                <div className="shrink-0 w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-[#a81d3a] to-[#830c24] text-white rounded-[1.8rem] flex items-center justify-center font-black text-4xl md:text-6xl shadow-xl border-4 border-white ring-4 ring-red-50/50">
+            {/* Header Info - Compact on Mobile */}
+            <div className="md:col-span-5 space-y-3 md:space-y-4">
+              <div className="flex items-center gap-4 md:gap-6">
+                <div className="shrink-0 w-16 h-16 md:w-28 md:h-28 bg-gradient-to-br from-[#a81d3a] to-[#830c24] text-white rounded-[1.25rem] md:rounded-[1.8rem] flex items-center justify-center font-black text-3xl md:text-6xl shadow-xl border-4 border-white ring-4 ring-red-50/50 transition-all">
                   {activeCourse.id}
                 </div>
                 <div className="min-w-0">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className="bg-[#1e293b] text-white text-[8px] md:text-[10px] px-3 py-1 rounded-full font-black uppercase tracking-widest shadow-sm">CICLO {activeCourse.ciclo}</span>
-                    <span className="bg-red-50 text-[#a81d3a] text-[8px] md:text-[10px] px-3 py-1 rounded-full font-black uppercase tracking-widest border border-red-100">ESENCIAL</span>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="bg-[#1e293b] text-white text-[7px] md:text-[10px] px-2 md:px-3 py-0.5 md:py-1 rounded-full font-black uppercase tracking-widest shadow-sm">CICLO {activeCourse.ciclo}</span>
+                    <span className="bg-red-50 text-[#a81d3a] text-[7px] md:text-[10px] px-2 md:px-3 py-0.5 md:py-1 rounded-full font-black uppercase tracking-widest border border-red-100 flex items-center gap-1">
+                      {CATEGORY_ICONS[activeCourse.category]} {activeCourse.category.toUpperCase()}
+                    </span>
                   </div>
-                  <h2 className="text-2xl md:text-4xl font-black text-gray-900 uppercase tracking-tighter leading-none mb-1.5">{activeCourse.title}</h2>
-                  <p className="text-[10px] md:text-[12px] font-black text-gray-400 uppercase tracking-[0.25em] truncate">{activeCourse.category} • {activeCourse.officialName}</p>
+                  <h2 className="text-lg md:text-4xl font-black text-gray-900 uppercase tracking-tighter leading-tight mb-0.5 md:mb-1.5 line-clamp-2">{activeCourse.title}</h2>
+                  <p className="text-[8px] md:text-[12px] font-black text-gray-400 uppercase tracking-[0.2em] truncate">{activeCourse.officialName}</p>
                 </div>
               </div>
-              <p className="text-gray-700 text-[14px] md:text-[19px] font-bold leading-tight border-l-[6px] border-[#a81d3a] pl-5 italic py-2 bg-red-50/30 rounded-r-2xl pr-4 shadow-sm">
+              <p className="text-gray-700 text-[12px] md:text-[19px] font-bold leading-snug md:leading-tight border-l-[4px] md:border-l-[6px] border-[#a81d3a] pl-3 md:pl-5 italic py-1.5 md:py-2 bg-red-50/30 rounded-r-xl md:rounded-r-2xl pr-4 shadow-sm">
                 "{activeCourse.description}"
               </p>
             </div>
 
-            {/* Radar Dominios (Desktop) */}
+            {/* Radar Dominios (Desktop Only) */}
             <div className="md:col-span-3 hidden md:block space-y-4">
                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1">Impacto de Habilidades</p>
                <div className="grid grid-cols-1 gap-4">
                   {[
-                    { label: 'INFRAESTRUCTURA', val: skillImpact.infr, color: '#3b82f6' },
-                    { label: 'PROGRAMACIÓN', val: skillImpact.prog, color: '#6366f1' },
-                    { label: 'SEGURIDAD', val: skillImpact.segu, color: '#ef4444' },
-                    { label: 'VIRTUALIZACIÓN', val: skillImpact.virt, color: '#10b981' }
+                    { label: 'INFRAESTRUCTURA', val: skillImpact.infr, color: '#3b82f6', icon: '🌐' },
+                    { label: 'PROGRAMACIÓN', val: skillImpact.prog, color: '#6366f1', icon: '🐍' },
+                    { label: 'SEGURIDAD', val: skillImpact.segu, color: '#ef4444', icon: '🛡️' },
+                    { label: 'VIRTUALIZACIÓN', val: skillImpact.virt, color: '#10b981', icon: '☁️' }
                   ].map((s) => (
                     <div key={s.label} className="space-y-1.5">
                       <div className="flex justify-between text-[9px] font-black uppercase text-gray-500 px-0.5">
-                        <span>{s.label}</span> 
+                        <span>{s.icon} {s.label}</span> 
                         <span style={{ color: s.color }}>{s.val}%</span>
                       </div>
                       <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden shadow-inner">
@@ -235,48 +249,48 @@ const App: React.FC = () => {
                </div>
             </div>
 
-            {/* Botones de Acción Ultra Llamativos */}
-            <div className="md:col-span-4 flex flex-col gap-6">
-               <div className="space-y-3">
-                  <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest px-1 flex items-center justify-between">
-                    <span>Inscripción Oficial</span>
-                    <span className="text-[#a81d3a] animate-pulse">● EN VIVO</span>
+            {/* CTA Buttons */}
+            <div className="md:col-span-4 flex flex-col gap-4 md:gap-6 mt-2 md:mt-0 pb-4 md:pb-0">
+               <div className="space-y-2 md:space-y-3">
+                  <p className="text-[9px] md:text-[10px] font-black text-gray-400 uppercase tracking-widest px-1 flex items-center justify-between">
+                    <span>Inscripción Oficial 🎯</span>
+                    <span className="text-[#a81d3a] animate-pulse">● ACTIVO</span>
                   </p>
-                  <div className="grid grid-cols-1 gap-4">
+                  <div className="grid grid-cols-1 gap-3 md:gap-4">
                     {activeCourse.links.map((link, idx) => (
                       <a 
                         key={idx} 
                         href={link.url} 
                         target="_blank" 
-                        className="group relative h-16 md:h-24 px-8 overflow-hidden bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#1e293b] text-white rounded-[1.5rem] flex items-center justify-between shadow-2xl transition-all hover:scale-[1.04] active:scale-95 border border-white/10 hover:border-[#a81d3a]/60 animate-neon-pulse"
+                        rel="noopener noreferrer"
+                        className="group relative h-14 md:h-24 px-6 md:px-8 overflow-hidden bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#1e293b] text-white rounded-[1.2rem] md:rounded-[1.5rem] flex items-center justify-between shadow-xl transition-all hover:scale-[1.04] active:scale-95 border border-white/10 hover:border-[#a81d3a]/60 animate-neon-pulse"
                       >
-                        {/* Shine Effect */}
-                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine-fast pointer-events-none"></div>
+                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:animate-shine-fast pointer-events-none"></div>
                         
                         <div className="flex flex-col min-w-0 z-10">
-                           <span className="text-[8px] md:text-[10px] text-red-400 font-black uppercase tracking-[0.3em] mb-1 group-hover:text-white transition-colors">MATRICULARSE</span>
-                           <span className="text-[15px] md:text-[20px] font-black uppercase tracking-wider truncate drop-shadow-lg">
+                           <span className="text-[7px] md:text-[10px] text-red-400 font-black uppercase tracking-[0.25em] mb-0.5 md:mb-1 group-hover:text-white transition-colors">ACCESO CURSO</span>
+                           <span className="text-[12px] md:text-[20px] font-black uppercase tracking-wider truncate drop-shadow-lg">
                              {link.label}
                            </span>
                         </div>
                         
-                        <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-2xl flex items-center justify-center group-hover:bg-[#a81d3a] group-hover:shadow-[0_0_35px_rgba(168,29,58,0.9)] transition-all duration-500 z-10 border border-white/10">
-                           <svg className="w-6 h-6 md:w-8 md:h-8 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                        <div className="shrink-0 w-9 h-9 md:w-16 md:h-16 bg-white/10 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:bg-[#a81d3a] group-hover:shadow-[0_0_35px_rgba(168,29,58,0.9)] transition-all duration-500 z-10 border border-white/10">
+                           <svg className="w-5 h-5 md:w-8 md:h-8 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                         </div>
                       </a>
                     ))}
                   </div>
                </div>
                
-               <div className="flex gap-4">
+               <div className="flex gap-3 md:gap-4">
                   {activeCourse.youtubeUrl && (
-                    <a href={activeCourse.youtubeUrl} target="_blank" className="flex-[2] h-14 md:h-16 bg-white border-2 border-red-100 text-[#a81d3a] rounded-2xl flex items-center justify-center gap-3 hover:bg-red-50 transition-all shadow-md active:scale-95 font-black text-[11px] md:text-[12px] uppercase tracking-widest group">
-                       <span className="text-2xl transition-transform group-hover:scale-125">📺</span> CLASE
+                    <a href={activeCourse.youtubeUrl} target="_blank" rel="noopener noreferrer" className="flex-[2] h-12 md:h-16 bg-white border-2 border-red-100 text-[#a81d3a] rounded-xl md:rounded-2xl flex items-center justify-center gap-2 md:gap-3 hover:bg-red-50 transition-all shadow-md active:scale-95 font-black text-[9px] md:text-[12px] uppercase tracking-widest group">
+                       <span className="text-xl md:text-2xl transition-transform group-hover:scale-125">📺</span> CLASE
                     </a>
                   )}
                   {activeCourse.linkedinUrl && (
-                    <a href={activeCourse.linkedinUrl} target="_blank" className="flex-1 h-14 md:h-16 bg-white border-2 border-blue-100 text-blue-600 rounded-2xl flex items-center justify-center hover:bg-blue-50 transition-all shadow-md active:scale-95 group">
-                       <span className="text-2xl transition-transform group-hover:rotate-12">🔗</span>
+                    <a href={activeCourse.linkedinUrl} target="_blank" rel="noopener noreferrer" className="flex-1 h-12 md:h-16 bg-white border-2 border-blue-100 text-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center hover:bg-blue-50 transition-all shadow-md active:scale-95 group">
+                       <span className="text-xl md:text-2xl transition-transform group-hover:rotate-12">🔗</span>
                     </a>
                   )}
                </div>
@@ -295,13 +309,16 @@ const App: React.FC = () => {
         .group-hover\\:animate-shine-fast { animation: shine-fast 1.8s infinite cubic-bezier(0.4, 0, 0.2, 1); }
         
         @keyframes neon-pulse {
-          0%, 100% { box-shadow: 0 15px 40px -15px rgba(0,0,0,0.6); border-color: rgba(255,255,255,0.1); }
-          50% { box-shadow: 0 15px 50px -10px rgba(168,29,58,0.25); border-color: rgba(168,29,58,0.3); }
+          0%, 100% { box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); border-color: rgba(255,255,255,0.05); }
+          50% { box-shadow: 0 10px 40px -5px rgba(168,29,58,0.25); border-color: rgba(168,29,58,0.25); }
         }
         .animate-neon-pulse { animation: neon-pulse 3s infinite ease-in-out; }
 
-        @keyframes pop-in { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes pop-in { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         .animate-pop-in { animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+        @keyframes fade-slide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-slide { animation: fade-slide 0.4s ease-out; }
         
         @keyframes float {
           0%, 100% { transform: translate(-50%, -50%) translateY(0); }
@@ -310,9 +327,21 @@ const App: React.FC = () => {
         
         ::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        @media (max-width: 768px) {
+
+        @media (max-width: 767px) {
           footer {
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
+          }
+          footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(to bottom, white, transparent);
+            pointer-events: none;
+            z-index: 10;
             border-top-left-radius: 2.5rem;
             border-top-right-radius: 2.5rem;
           }

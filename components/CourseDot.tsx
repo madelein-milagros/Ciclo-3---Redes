@@ -20,14 +20,19 @@ const CourseDot: React.FC<CourseDotProps> = ({ course, isActive, onSelect }) => 
 
       <button
         onClick={onSelect}
-        className={`w-5 h-5 md:w-7 md:h-7 rounded-full border-[3px] transition-all duration-500 shadow-sm relative
-          ${isActive 
-            ? 'bg-[#a81d3a] border-white scale-125 z-10 shadow-[0_0_20px_rgba(168,29,58,0.7)]' 
-            : 'bg-[#ff9f9f] border-white/80 hover:bg-[#a81d3a] hover:scale-110'}`}
+        className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center -m-3 outline-none"
+        aria-label={`Seleccionar curso ${course.title}`}
       >
-        {isActive && (
-          <div className="absolute inset-0 rounded-full animate-ping opacity-40 bg-[#a81d3a]"></div>
-        )}
+        <div
+          className={`w-5 h-5 md:w-7 md:h-7 rounded-full border-[3px] transition-all duration-500 shadow-sm relative pointer-events-none
+            ${isActive 
+              ? 'bg-[#a81d3a] border-white scale-125 z-10 shadow-[0_0_20px_rgba(168,29,58,0.7)]' 
+              : 'bg-[#ff9f9f] border-white/80 hover:bg-[#a81d3a] hover:scale-110'}`}
+        >
+          {isActive && (
+            <div className="absolute inset-0 rounded-full animate-ping opacity-40 bg-[#a81d3a]"></div>
+          )}
+        </div>
       </button>
     </div>
   );
