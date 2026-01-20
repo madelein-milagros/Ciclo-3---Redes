@@ -8,6 +8,14 @@ Este proyecto es una aplicación web interactiva diseñada para visualizar la ru
 - **Interactividad**: Mapa serpenteante con decoraciones técnicas y efectos visuales.
 - **Social**: Enlaces directos para compartir progresos en LinkedIn.
 
+📦 Instalación y Ejecución
+Clona el repositorio:
+git clone https://github.com/madelein-milagros/TU_REPOSITORIO.git
+Instala las dependencias:
+npm install
+Ejecuta en modo desarrollo:
+npm run dev
+
 ## 🚀 Cómo desplegarlo (Gratis)
 
 ### Paso 1: Subir a GitHub
