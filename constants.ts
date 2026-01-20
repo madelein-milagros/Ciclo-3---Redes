@@ -57,7 +57,8 @@ export const COURSES: Course[] = [
     officialName: "Networking Basics & Packet Tracer",
     links: [
       { label: "Conceptos Básicos", url: "https://www.netacad.com/es/courses/networking-basics?courseLang=es-XL" },
-      { label: "Packet Tracer", url: "https://www.netacad.com/courses/getting-started-cisco-packet-tracer?courseLang=es-XL" }
+      { label: "Packet Tracer", url: "https://www.netacad.com/courses/getting-started-cisco-packet-tracer?courseLang=es-XL" },
+      { label: "Explorando Redes", url: "https://www.netacad.com/courses/networking-basics?courseLang=es-XL" }
     ],
     description: "Configuración inicial de dispositivos y simulación avanzada en el entorno de Cisco.",
     certification: "Cisco Packet Tracer Badge",
@@ -81,7 +82,8 @@ export const COURSES: Course[] = [
     officialName: "Fundamentos de Linux",
     links: [
       { label: "NetAcad Linux", url: "https://www.netacad.com/courses/fundamentos-de-linux?courseLang=es-XL" },
-      { label: "Linux Essentials", url: "https://www.netdevgroup.com/online/courses/open-source/linux-essentials" }
+      { label: "Linux Essentials", url: "https://www.netdevgroup.com/online/courses/open-source/linux-essentials" },
+      { label: "LPI Certification", url: "https://www.lpi.org/our-certifications/linux-essentials-overview" }
     ],
     description: "Administración profesional de sistemas operativos basados en el kernel Linux.",
     certification: "LPI Linux Essentials",
@@ -156,7 +158,8 @@ export const COURSES: Course[] = [
     officialName: "Exploración de IoT con Packet Tracer",
     links: [
       { label: "IoT Intro", url: "https://www.netacad.com/courses/introduction-iot?courseLang=es-XL" },
-      { label: "IoT Exploring", url: "https://www.netacad.com/courses/exploring-iot-cisco-packet-tracer?courseLang=es-XL" }
+      { label: "IoT Exploring", url: "https://www.netacad.com/courses/exploring-iot-cisco-packet-tracer?courseLang=es-XL" },
+      { label: "Cisco IoT Portal", url: "https://www.cisco.com/c/es_mx/solutions/internet-of-things/overview.html" }
     ],
     description: "Conectividad de objetos y transformación digital mediante sensores y automatización.",
     certification: "Cisco IoT Professional",
@@ -169,7 +172,8 @@ export const COURSES: Course[] = [
     officialName: "Fortinet Security Journey",
     links: [
       { label: "Threat Landscape", url: "https://training.fortinet.com/local/staticpage/view.php?page=library_introduction-to-the-threat-landscape" },
-      { label: "Cybersecurity Basics", url: "https://training.fortinet.com/local/staticpage/view.php?page=library_technical-introduction-to-the-threat-landscape" }
+      { label: "Technical Intro", url: "https://training.fortinet.com/local/staticpage/view.php?page=library_technical-introduction-to-the-threat-landscape" },
+      { label: "FortiTraining Portal", url: "https://training.fortinet.com/" }
     ],
     description: "Configuración de firewalls de próxima generación y defensa de bordes corporativos.",
     certification: "Fortinet NSE 1 & 2",
