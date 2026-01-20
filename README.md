@@ -11,9 +11,9 @@ Este proyecto es una aplicación web interactiva diseñada para visualizar la ru
 📦 Instalación y Ejecución
 Clona el repositorio:
 git clone https://github.com/madelein-milagros/Ciclo-3---Redes.git
-Instala las dependencias:
+-Instala las dependencias:
 npm install
-Ejecuta en modo desarrollo:
+-Ejecuta en modo desarrollo:
 npm run dev
 
 ## 🚀 Cómo desplegarlo (Gratis)
