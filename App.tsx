@@ -120,7 +120,7 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-100 shadow-[0_-10px_40px_rgba(0,0,0,0.12)] z-50 shrink-0 overflow-y-auto max-h-[52vh] md:max-h-none">
+      <footer className="bg-white border-t border-gray-100 shadow-[0_-10px_40px_rgba(0,0,0,0.12)] z-50 shrink-0 overflow-y-auto max-h-[55vh] md:max-h-none">
         <div className="max-w-6xl mx-auto p-5 md:p-8 flex flex-col gap-5 md:gap-6">
           <div className="flex items-center gap-4 md:gap-6">
             <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 bg-[#a81d3a] text-white rounded-xl md:rounded-[1.25rem] flex items-center justify-center font-black text-2xl md:text-3xl shadow-lg transform -rotate-1">
@@ -139,20 +139,35 @@ const App: React.FC = () => {
             {activeCourse.description}
           </p>
 
-          <div className="flex flex-col gap-5 pb-2 md:pb-0">
-             <a href={activeCourse.links[0]?.url} target="_blank" className="h-12 md:h-14 w-full md:w-fit px-6 md:px-10 bg-[#1e293b] text-white rounded-xl md:rounded-2xl flex items-center justify-center gap-2 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] shadow-md hover:bg-black transition-all active:scale-95">
-                VER CONTENIDO <span className="text-xs md:text-lg">↗</span>
-             </a>
+          <div className="flex flex-col gap-6 pb-2 md:pb-0">
+             {/* Contenedor de Botones de Contenido Principal (Ahora mapea todos los links) */}
+             <div className="flex flex-wrap gap-3">
+                {activeCourse.links.map((link, idx) => (
+                  <a 
+                    key={idx}
+                    href={link.url} 
+                    target="_blank" 
+                    className="h-12 md:h-14 px-6 md:px-10 bg-[#1e293b] text-white rounded-xl md:rounded-2xl flex items-center justify-center gap-2 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] shadow-md hover:bg-black transition-all active:scale-95 border border-white/10"
+                  >
+                    {link.label.toUpperCase()} <span className="text-xs md:text-lg">↗</span>
+                  </a>
+                ))}
+             </div>
              
+             {/* Contenedor de Recursos Secundarios y Redes */}
              <div className="relative">
                <div className="flex items-center gap-3 md:gap-4 overflow-x-auto pb-6 scrollbar-hide -mx-1 px-1 snap-x">
-                  <a href={activeCourse.youtubeUrl} target="_blank" className="snap-start shrink-0 h-12 md:h-14 px-5 md:px-7 bg-red-50 text-red-600 border-2 border-red-200 rounded-xl md:rounded-2xl flex items-center gap-2.5 text-[10px] md:text-[11px] font-black uppercase tracking-widest active:bg-red-100 transition-all shadow-sm">
-                     <span className="text-lg md:text-xl">📺</span> <span>TUTORIAL</span>
-                  </a>
+                  {activeCourse.youtubeUrl && (
+                    <a href={activeCourse.youtubeUrl} target="_blank" className="snap-start shrink-0 h-12 md:h-14 px-5 md:px-7 bg-red-50 text-red-600 border-2 border-red-200 rounded-xl md:rounded-2xl flex items-center gap-2.5 text-[10px] md:text-[11px] font-black uppercase tracking-widest active:bg-red-100 transition-all shadow-sm">
+                       <span className="text-lg md:text-xl">📺</span> <span>TUTORIAL</span>
+                    </a>
+                  )}
                   
-                  <a href={activeCourse.linkedinUrl} target="_blank" className="snap-start shrink-0 h-12 md:h-14 px-5 md:px-7 bg-blue-50 text-blue-600 border-2 border-blue-200 rounded-xl md:rounded-2xl flex items-center gap-2.5 text-[10px] md:text-[11px] font-black uppercase tracking-widest active:bg-blue-100 transition-all shadow-sm">
-                     <span className="text-lg md:text-xl">🔗</span> <span>LOGRO</span>
-                  </a>
+                  {activeCourse.linkedinUrl && (
+                    <a href={activeCourse.linkedinUrl} target="_blank" className="snap-start shrink-0 h-12 md:h-14 px-5 md:px-7 bg-blue-50 text-blue-600 border-2 border-blue-200 rounded-xl md:rounded-2xl flex items-center gap-2.5 text-[10px] md:text-[11px] font-black uppercase tracking-widest active:bg-blue-100 transition-all shadow-sm">
+                       <span className="text-lg md:text-xl">🔗</span> <span>LOGRO</span>
+                    </a>
+                  )}
 
                   <div className="snap-start shrink-0 h-12 md:h-14 px-5 md:px-7 bg-amber-50 border-2 border-amber-200 rounded-xl md:rounded-2xl flex items-center gap-2.5 shadow-sm">
                     <span className="text-lg md:text-xl">🏆</span>
@@ -162,7 +177,6 @@ const App: React.FC = () => {
                     </div>
                   </div>
                </div>
-               {/* Sutil indicador visual de que hay más contenido a la derecha en móviles */}
                <div className="absolute right-0 top-0 bottom-6 w-12 bg-gradient-to-l from-white via-white/40 to-transparent pointer-events-none md:hidden"></div>
              </div>
           </div>
