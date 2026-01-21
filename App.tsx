@@ -193,7 +193,7 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      {/* Optimized Responsive Footer con Área de Seguridad para Móviles */}
+      {/* Optimized Responsive Footer con Área de Seguridad y Créditos */}
       <footer className="relative bg-white border-t-[4px] md:border-t-[6px] border-[#a81d3a] shadow-[0_-20px_60px_rgba(0,0,0,0.25)] z-50 shrink-0 overflow-y-auto scrollbar-hide rounded-t-[2rem] md:rounded-none max-h-[65vh] md:max-h-none">
         {/* Mobile Drag Handle */}
         <div className="md:hidden w-full flex justify-center pt-3 pb-2 sticky top-0 bg-white/95 backdrop-blur-md z-10">
@@ -201,10 +201,9 @@ const App: React.FC = () => {
         </div>
 
         <div key={activeCourseId} className="max-w-7xl mx-auto px-5 pt-2 pb-6 md:px-12 md:py-10 animate-fade-slide">
-          {/* pb-24 asegura que NADA sea tapado por la barra del sistema del celular */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-12 items-start pb-24 md:pb-0">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-12 items-start pb-20 md:pb-0">
             
-            {/* Header Info - Compacto */}
+            {/* Header Info */}
             <div className="md:col-span-5 space-y-2 md:space-y-4">
               <div className="flex items-center gap-3 md:gap-6">
                 <div className="shrink-0 w-12 h-12 md:w-28 md:h-28 bg-gradient-to-br from-[#a81d3a] to-[#830c24] text-white rounded-xl md:rounded-[1.8rem] flex items-center justify-center font-black text-xl md:text-6xl shadow-lg border-[3px] md:border-4 border-white ring-2 md:ring-4 ring-red-50/50">
@@ -249,7 +248,7 @@ const App: React.FC = () => {
                </div>
             </div>
 
-            {/* CTA Buttons - Textos actualizados según solicitud */}
+            {/* CTA Buttons */}
             <div className="md:col-span-4 flex flex-col gap-3 md:gap-6 mt-1 md:mt-0">
                <div className="space-y-1 md:space-y-3">
                   <p className="text-[7px] md:text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center justify-between px-1">
@@ -282,17 +281,25 @@ const App: React.FC = () => {
                   </div>
                </div>
                
-               <div className="flex gap-2 md:gap-4">
-                  {activeCourse.youtubeUrl && (
-                    <a href={activeCourse.youtubeUrl} target="_blank" rel="noopener noreferrer" className="flex-[2] h-10 md:h-16 bg-white border-2 border-red-50 text-[#a81d3a] rounded-lg md:rounded-2xl flex items-center justify-center gap-2 hover:bg-red-50 transition-all shadow-sm active:scale-95 font-black text-[8px] md:text-[12px] uppercase tracking-widest">
-                       <span className="text-base md:text-2xl">📺</span> CLASE
-                    </a>
-                  )}
+               <div className="flex flex-col gap-3">
                   {activeCourse.linkedinUrl && (
-                    <a href={activeCourse.linkedinUrl} target="_blank" rel="noopener noreferrer" className="flex-1 h-10 md:h-16 bg-white border-2 border-blue-50 text-blue-600 rounded-lg md:rounded-2xl flex items-center justify-center hover:bg-blue-50 transition-all shadow-sm active:scale-95">
-                       <span className="text-base md:text-2xl">🔗</span>
+                    <a href={activeCourse.linkedinUrl} target="_blank" rel="noopener noreferrer" className="w-full h-10 md:h-16 bg-white border-2 border-blue-50 text-blue-600 rounded-lg md:rounded-2xl flex items-center justify-center gap-2 hover:bg-blue-50 transition-all shadow-sm active:scale-95 font-black text-[8px] md:text-[12px] uppercase tracking-widest">
+                       <span className="text-base md:text-2xl">🔗</span> COMPARTIR LOGRO
                     </a>
                   )}
+                  
+                  {/* Créditos del Desarrollador - Micro Elegante */}
+                  <div className="pt-2 mt-1 border-t border-gray-100 flex items-center justify-center gap-1.5 opacity-70 hover:opacity-100 transition-opacity">
+                    <span className="text-[7px] md:text-[8px] font-black text-gray-400 uppercase tracking-widest">Desarrollado por</span>
+                    <a 
+                      href="https://www.linkedin.com/in/milagros-ramos-a8676231a" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[7px] md:text-[8px] font-black text-[#a81d3a] hover:underline uppercase tracking-widest flex items-center gap-0.5"
+                    >
+                      Milagros Ramos <span className="text-[9px] md:text-[10px]">↗</span>
+                    </a>
+                  </div>
                </div>
             </div>
 

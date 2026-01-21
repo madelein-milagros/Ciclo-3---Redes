@@ -29,7 +29,6 @@ export const COURSES: Course[] = [
     ],
     description: "Instalación, configuración y mantenimiento de componentes de hardware y sistemas operativos base.",
     certification: "Cisco Networking Academy Cert",
-    youtubeUrl: "https://www.youtube.com/results?search_query=it+essentials+tecsup",
     linkedinUrl: createLinkedInUrl("Soporte de Hardware y Software", 1)
   },
   // CICLO 2
@@ -43,7 +42,6 @@ export const COURSES: Course[] = [
     ],
     description: "Principios de protección de datos, identidad digital y seguridad en redes domésticas y empresariales.",
     certification: "Cisco Cyber Intro Badge",
-    youtubeUrl: "https://www.youtube.com/results?search_query=ciberseguridad+redes+tecsup",
     linkedinUrl: createLinkedInUrl("Informática Aplicada", 2)
   },
   {
@@ -56,7 +54,6 @@ export const COURSES: Course[] = [
     ],
     description: "Introducción a la lógica de programación y desarrollo de scripts básicos en Python para administración.",
     certification: "Python Institute PCEP",
-    youtubeUrl: "https://www.youtube.com/results?search_query=python+for+networking+tecsup",
     linkedinUrl: createLinkedInUrl("Programación básica", 2)
   },
   {
@@ -82,7 +79,6 @@ export const COURSES: Course[] = [
     ],
     description: "Simulación de redes, configuración de routers y protocolos de comunicación iniciales.",
     certification: "Packet Tracer Expert",
-    youtubeUrl: "https://www.youtube.com/results?search_query=cisco+packet+tracer+redes+tecsup",
     linkedinUrl: createLinkedInUrl("Implementación de Redes", 2)
   },
   // CICLO 3
@@ -96,7 +92,6 @@ export const COURSES: Course[] = [
     ],
     description: "Desarrollo avanzado en Python enfocado en automatización de tareas de red y scripts de gestión.",
     certification: "Python Institute PCAP",
-    youtubeUrl: "https://www.youtube.com/results?search_query=python+essentials+2+networking",
     linkedinUrl: createLinkedInUrl("Programación Móvil", 3)
   },
   {
@@ -110,7 +105,6 @@ export const COURSES: Course[] = [
     ],
     description: "Dominio de la línea de comandos de Linux, gestión de archivos y administración del sistema.",
     certification: "LPI Linux Essentials",
-    youtubeUrl: "https://www.youtube.com/results?search_query=linux+essentials+networking+tecsup",
     linkedinUrl: createLinkedInUrl("Linux OS", 3)
   },
   {
@@ -135,7 +129,6 @@ export const COURSES: Course[] = [
     ],
     description: "Enrutamiento estático y dinámico, VLSM, y protocolos de comunicación de capa 3.",
     certification: "CCNA Preparation",
-    youtubeUrl: "https://www.youtube.com/results?search_query=routing+protocols+networking",
     linkedinUrl: createLinkedInUrl("Enrutamiento", 3)
   },
   {
@@ -173,7 +166,6 @@ export const COURSES: Course[] = [
     ],
     description: "Implementación de metodologías ágiles en el despliegue de infraestructura y servidores.",
     certification: "Scrum Fundamentals",
-    youtubeUrl: "https://www.youtube.com/results?search_query=scrum+fundamentals+tecsup",
     linkedinUrl: createLinkedInUrl("Arquitectura Servidores", 4)
   },
   {
@@ -186,7 +178,6 @@ export const COURSES: Course[] = [
     ],
     description: "Técnicas de pentesting, análisis de vulnerabilidades y defensa proactiva de sistemas.",
     certification: "Cisco Ethical Hacker Cert",
-    youtubeUrl: "https://www.youtube.com/results?search_query=ethical+hacking+forense+tecsup",
     linkedinUrl: createLinkedInUrl("Ethical Hacking", 4)
   },
   {
@@ -213,7 +204,6 @@ export const COURSES: Course[] = [
     ],
     description: "Conexión de dispositivos, captura de datos mediante sensores y análisis IoT.",
     certification: "IoT Fundamentals",
-    youtubeUrl: "https://www.youtube.com/results?search_query=iot+networking+tecsup",
     linkedinUrl: createLinkedInUrl("Programación IoT", 5)
   },
   {
@@ -240,7 +230,6 @@ export const COURSES: Course[] = [
     ],
     description: "Administración de equipos FortiGate y arquitecturas de seguridad de red Fortinet.",
     certification: "Fortinet NSE 1, 2 & 3",
-    youtubeUrl: "https://www.youtube.com/results?search_query=fortinet+security+tecsup",
     linkedinUrl: createLinkedInUrl("Seguridad Perimetral", 5)
   },
   {
@@ -266,7 +255,6 @@ export const COURSES: Course[] = [
     ],
     description: "Despliegue de infraestructura en la nube, hipervisores y contenedores.",
     certification: "Cloud Computing Specialist",
-    youtubeUrl: "https://www.youtube.com/results?search_query=cloud+virtualization+tecsup",
     linkedinUrl: createLinkedInUrl("Cloud Computing", 6)
   }
 ];

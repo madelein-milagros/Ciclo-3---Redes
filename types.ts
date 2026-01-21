@@ -13,7 +13,6 @@ export interface Course {
   }[];
   description: string;
   certification: string;
-  youtubeUrl?: string;
   linkedinUrl?: string;
 }
 
