@@ -118,8 +118,7 @@ const App: React.FC = () => {
     };
   }, [roadmapItems, isMobile]);
 
-  const lastItemX = positionedItems.length > 0 ? positionedItems[positionedItems.length - 1].x : 0;
-  const totalWidth = lastItemX + (isMobile ? 120 : 220);
+  const totalWidth = positionedItems.length > 0 ? positionedItems[positionedItems.length - 1].x + (isMobile ? 120 : 220) : 1000;
 
   return (
     <div className="h-screen bg-[#f8f9fa] flex flex-col font-sans select-none text-gray-900 overflow-hidden">
@@ -202,7 +201,7 @@ const App: React.FC = () => {
         </div>
 
         <div key={activeCourseId} className="max-w-7xl mx-auto px-5 pt-2 pb-6 md:px-12 md:py-10 animate-fade-slide">
-          {/* Contenedor con Padding inferior extra (pb-24) para evitar cortes por botones del sistema */}
+          {/* pb-24 asegura que NADA sea tapado por la barra del sistema del celular */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-12 items-start pb-24 md:pb-0">
             
             {/* Header Info - Compacto */}
@@ -250,11 +249,11 @@ const App: React.FC = () => {
                </div>
             </div>
 
-            {/* CTA Buttons - Ajuste crítico de altura y visibilidad */}
+            {/* CTA Buttons - Textos actualizados según solicitud */}
             <div className="md:col-span-4 flex flex-col gap-3 md:gap-6 mt-1 md:mt-0">
                <div className="space-y-1 md:space-y-3">
                   <p className="text-[7px] md:text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center justify-between px-1">
-                    <span>Inscripción Oficial 🎯</span>
+                    <span>Vacantes Disponibles 🎯</span>
                     <span className="text-[#a81d3a] animate-pulse">● ACTIVO</span>
                   </p>
                   <div className="grid grid-cols-1 gap-2 md:gap-4">
@@ -269,9 +268,9 @@ const App: React.FC = () => {
                         <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shine-fast pointer-events-none"></div>
                         
                         <div className="flex flex-col min-w-0 z-10">
-                           <span className="text-[5px] md:text-[10px] text-red-400 font-black uppercase tracking-widest">MATRÍCULA</span>
+                           <span className="text-[5px] md:text-[10px] text-red-400 font-black uppercase tracking-widest mb-0.5">INSCRIPCIÓN ABIERTA 🟢</span>
                            <span className="text-[10px] md:text-[20px] font-black uppercase tracking-wide truncate">
-                             {link.label}
+                             CONÉCTATE AL {link.label.toUpperCase()}
                            </span>
                         </div>
                         
@@ -300,8 +299,8 @@ const App: React.FC = () => {
           </div>
         </div>
         
-        {/* Indicador de más contenido inferior (Solo móviles) */}
-        <div className="md:hidden sticky bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+        {/* Indicador visual inferior */}
+        <div className="md:hidden sticky bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
       </footer>
 
       <style>{`
@@ -331,12 +330,6 @@ const App: React.FC = () => {
         
         ::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-
-        @media (max-width: 767px) {
-          footer {
-            box-shadow: 0 -10px 40px rgba(0,0,0,0.2);
-          }
-        }
       `}</style>
 
       {/* Graduation Modal */}
