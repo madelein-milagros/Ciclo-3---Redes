@@ -60,13 +60,15 @@ const App: React.FC = () => {
 
   const roadmapItems = useMemo(() => {
     const items: any[] = [];
-    [1, 2, 3, 4, 5, 6].forEach((cicloNum) => {
+    const maxCycle = Math.max(...COURSES.map(c => c.ciclo), 1);
+    
+    for (let cicloNum = 1; cicloNum <= maxCycle; cicloNum++) {
       const cycleCourses = COURSES.filter(c => c.ciclo === cicloNum);
       cycleCourses.forEach(course => {
         items.push({ type: 'course', value: course, id: course.id });
       });
       items.push({ type: 'cycle', value: cicloNum, id: `cycle-${cicloNum}` });
-    });
+    }
     return items;
   }, []);
 
@@ -193,9 +195,8 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      {/* Optimized Responsive Footer con Área de Seguridad y Créditos */}
+      {/* Optimized Responsive Footer */}
       <footer className="relative bg-white border-t-[4px] md:border-t-[6px] border-[#a81d3a] shadow-[0_-20px_60px_rgba(0,0,0,0.25)] z-50 shrink-0 overflow-y-auto scrollbar-hide rounded-t-[2rem] md:rounded-none max-h-[65vh] md:max-h-none">
-        {/* Mobile Drag Handle */}
         <div className="md:hidden w-full flex justify-center pt-3 pb-2 sticky top-0 bg-white/95 backdrop-blur-md z-10">
           <div className="w-10 h-1 bg-gray-200 rounded-full"></div>
         </div>
@@ -252,8 +253,8 @@ const App: React.FC = () => {
             <div className="md:col-span-4 flex flex-col gap-3 md:gap-6 mt-1 md:mt-0">
                <div className="space-y-1 md:space-y-3">
                   <p className="text-[7px] md:text-[10px] font-black text-gray-400 uppercase tracking-widest flex items-center justify-between px-1">
-                    <span>Vacantes Disponibles 🎯</span>
-                    <span className="text-[#a81d3a] animate-pulse">● ACTIVO</span>
+                    <span>Certificación Oficial 🎯</span>
+                    <span className="text-[#a81d3a] animate-pulse">● DISPONIBLE</span>
                   </p>
                   <div className="grid grid-cols-1 gap-2 md:gap-4">
                     {activeCourse.links.map((link, idx) => (
@@ -265,14 +266,12 @@ const App: React.FC = () => {
                         className="group relative h-11 md:h-24 px-4 md:px-8 overflow-hidden bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#1e293b] text-white rounded-lg md:rounded-[1.5rem] flex items-center justify-between shadow-lg active:scale-95 border border-white/5 animate-neon-pulse"
                       >
                         <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shine-fast pointer-events-none"></div>
-                        
                         <div className="flex flex-col min-w-0 z-10">
-                           <span className="text-[5px] md:text-[10px] text-red-400 font-black uppercase tracking-widest mb-0.5">INSCRIPCIÓN ABIERTA 🟢</span>
+                           <span className="text-[5px] md:text-[10px] text-red-400 font-black uppercase tracking-widest mb-0.5">FORMACIÓN TECSUP 🟢</span>
                            <span className="text-[10px] md:text-[20px] font-black uppercase tracking-wide truncate">
-                             CONÉCTATE AL {link.label.toUpperCase()}
+                             {link.label.toUpperCase()}
                            </span>
                         </div>
-                        
                         <div className="shrink-0 w-7 h-7 md:w-16 md:h-16 bg-white/10 rounded-md md:rounded-2xl flex items-center justify-center group-hover:bg-[#a81d3a] transition-all z-10">
                            <svg className="w-3.5 h-3.5 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                         </div>
@@ -288,14 +287,13 @@ const App: React.FC = () => {
                     </a>
                   )}
                   
-                  {/* Créditos del Desarrollador - Micro Elegante */}
                   <div className="pt-2 mt-1 border-t border-gray-100 flex items-center justify-center gap-1.5 opacity-70 hover:opacity-100 transition-opacity">
                     <span className="text-[7px] md:text-[8px] font-black text-gray-400 uppercase tracking-widest">Desarrollado por</span>
                     <a 
                       href="https://www.linkedin.com/in/milagros-ramos-a8676231a" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="text-[7px] md:text-[8px] font-black text-[#a81d3a] hover:underline uppercase tracking-widest flex items-center gap-0.5"
+                      className="text-[7px] md:text-[8px] font-black text-[#a81d3a] hover:underline uppercase tracking-widest"
                     >
                       Milagros Ramos <span className="text-[9px] md:text-[10px]">↗</span>
                     </a>
@@ -305,8 +303,6 @@ const App: React.FC = () => {
 
           </div>
         </div>
-        
-        {/* Indicador visual inferior */}
         <div className="md:hidden sticky bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
       </footer>
 
@@ -339,7 +335,6 @@ const App: React.FC = () => {
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
 
-      {/* Graduation Modal */}
       {showFinalModal && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-6">
           <div className="absolute inset-0 bg-gray-900/90 backdrop-blur-md" onClick={() => setShowFinalModal(false)}></div>
