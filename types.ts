@@ -14,6 +14,7 @@ export interface Course {
   description: string;
   certification: string;
   linkedinUrl?: string;
+  prepNote?: string; // Nota de recomendación antes de iniciar el ciclo
 }
 
 export interface Checkpoint {

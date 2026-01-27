@@ -136,7 +136,7 @@ const App: React.FC = () => {
         </div>
         <div className="bg-red-50 border border-red-100 px-2 py-0.5 md:px-3 md:py-1 rounded text-[8px] md:text-[9px] font-black text-[#a81d3a] uppercase tracking-widest flex items-center gap-2">
           <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
-          ADMISIONES 2026
+          CICLOS 1-6 • PRO
         </div>
       </header>
 
@@ -221,9 +221,22 @@ const App: React.FC = () => {
                   <p className="text-[6px] md:text-[12px] font-black text-gray-400 uppercase tracking-widest truncate">{activeCourse.officialName}</p>
                 </div>
               </div>
-              <p className="text-gray-700 text-[10px] md:text-[19px] font-bold leading-tight border-l-[3px] md:border-l-[6px] border-[#a81d3a] pl-3 md:pl-5 italic py-1 md:py-2 bg-red-50/10 rounded-r-lg md:rounded-r-2xl pr-3 shadow-sm">
-                "{activeCourse.description}"
-              </p>
+              
+              <div className="space-y-3">
+                <p className="text-gray-700 text-[10px] md:text-[19px] font-bold leading-tight border-l-[3px] md:border-l-[6px] border-[#a81d3a] pl-3 md:pl-5 italic py-1 md:py-2 bg-red-50/10 rounded-r-lg md:rounded-r-2xl pr-3 shadow-sm">
+                  "{activeCourse.description}"
+                </p>
+                
+                {activeCourse.prepNote && (
+                  <div className="bg-yellow-50 border border-yellow-100 rounded-xl p-3 md:p-4 flex items-start gap-3 animate-pulse">
+                    <span className="text-xl md:text-2xl">💡</span>
+                    <div>
+                      <p className="text-[7px] md:text-[9px] font-black text-yellow-700 uppercase tracking-widest mb-1">Recomendación Académica</p>
+                      <p className="text-[9px] md:text-[13px] font-bold text-yellow-800 leading-tight">{activeCourse.prepNote}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Radar Dominios (Solo Desktop) */}

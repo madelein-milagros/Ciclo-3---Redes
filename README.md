@@ -1,37 +1,37 @@
 
-# 🚀 Roadmap Profesional Tecsup 2026 - Redes
+# 🚀 Roadmap Profesional Tecsup 2026 - Redes (V.6 Ciclos)
 
-Este proyecto es una aplicación web interactiva diseñada para visualizar la ruta de aprendizaje de la carrera de **Redes y Comunicaciones**. Optimizado con una estética de alta gama para dispositivos móviles y escritorio.
+Este proyecto es una aplicación web interactiva de alto rendimiento diseñada para visualizar la ruta de aprendizaje de la carrera de **Redes y Comunicaciones**.
 
-## ✨ Características clave
-- **Pista Tecnológica**: Mapa dinámico con 6 ciclos académicos.
-- **Botones Call-to-Action**: Enlaces de inscripción con efectos neón y brillo premium.
-- **Mobile First**: Experiencia de usuario fluida en cualquier smartphone.
-- **Progreso Visual**: Radar de habilidades dinámico según el curso seleccionado.
+## ✨ Características Premium
+- **Ruta de 6 Ciclos**: Mapa tecnológico completo con 21 cursos clave.
+- **Notas de Nivelación**: Sistema de recomendaciones (prepNote) integradas en el footer.
+- **CTAs Dinámicos**: Botones con efectos de brillo y neón para inscripción directa.
+- **Mobile First**: Diseño adaptativo ultra-fluido para smartphones.
 
-## 🚀 Despliegue en 3 Minutos (Gratis)
+## 🚀 Despliegue en 3 Minutos
 
 ### 1. Preparar en GitHub
-1. Crea un repositorio en GitHub llamado `roadmap-redes`.
-2. Sube tus archivos:
+1. Crea un repositorio en GitHub llamado `roadmap-redes-2026`.
+2. Sube tus archivos siguiendo estos comandos en tu terminal:
    ```bash
    git init
    git add .
-   git commit -m "Versión Final Premium"
+   git commit -m "Versión Final 6 Ciclos con PrepNotes"
    git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/roadmap-redes.git
+   git remote add origin https://github.com/TU_USUARIO/roadmap-redes-2026.git
    git push -u origin main
    ```
 
-### 2. Desplegar en Vercel
-1. Entra a [Vercel](https://vercel.com) e inicia sesión con GitHub.
+### 2. Desplegar en Vercel (Recomendado)
+1. Ve a [Vercel](https://vercel.com) e inicia sesión.
 2. Haz clic en **"Add New"** > **"Project"**.
-3. Selecciona tu repositorio `roadmap-redes`.
-4. En "Framework Preset", asegúrate de que diga **Vite**.
+3. Selecciona tu repositorio de GitHub.
+4. Vercel detectará automáticamente que es un proyecto **Vite**. No cambies nada en "Build Settings".
 5. Haz clic en **"Deploy"**.
 
-### 3. ¡Listo!
-Vercel te dará una URL (ej. `roadmap-redes.vercel.app`) para que la compartas en tu LinkedIn o la abras en tu celular.
+### 3. Compartir
+Vercel te dará una URL (ej: `roadmap-redes-2026.vercel.app`). ¡Cópiala y pégala en tu perfil de LinkedIn!
 
 ---
-Especialidad de **Redes y Comunicaciones**. ¡El futuro es hoy! 🌐🛡️
+Desarrollado para la especialidad de **Redes y Comunicaciones**. 🌐🛡️
