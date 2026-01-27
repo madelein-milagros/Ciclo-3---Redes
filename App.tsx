@@ -301,15 +301,8 @@ const App: React.FC = () => {
                   )}
                   
                   <div className="pt-2 mt-1 border-t border-gray-100 flex items-center justify-center gap-1.5 opacity-70 hover:opacity-100 transition-opacity">
-                    <span className="text-[7px] md:text-[8px] font-black text-gray-400 uppercase tracking-widest">Desarrollado por</span>
-                    <a 
-                      href="https://www.linkedin.com/in/milagros-ramos-a8676231a" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-[7px] md:text-[8px] font-black text-[#a81d3a] hover:underline uppercase tracking-widest"
-                    >
-                      Milagros Ramos <span className="text-[9px] md:text-[10px]">↗</span>
-                    </a>
+                    <span className="text-[7px] md:text-[8px] font-black text-gray-400 uppercase tracking-widest">Desarrollado para</span>
+                    <span className="text-[7px] md:text-[8px] font-black text-[#a81d3a] uppercase tracking-widest">Especialidad de Redes</span>
                   </div>
                </div>
             </div>

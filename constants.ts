@@ -13,7 +13,7 @@ export const COLORS = {
 const LI_BASE = "https://www.linkedin.com/feed/?shareActive=true&text=";
 
 const createLinkedInUrl = (courseTitle: string, ciclo: number) => {
-  const message = `¡Sigo avanzando! 🚀 Acabo de completar el curso de "${courseTitle}" del Ciclo ${ciclo} en Tecsup. Especializándome en Redes y Comunicaciones. #Tecsup2026 #Networking`;
+  const message = `¡Sigo avanzando! 🚀 Acabo de completar el curso de "${courseTitle}" del Ciclo ${ciclo} en Tecsup. Especializándome en Redes y Comunicaciones. #Tecsup2026 #Networking #Tecsup`;
   return LI_BASE + encodeURIComponent(message);
 };
 
@@ -27,7 +27,7 @@ export const COURSES: Course[] = [
     links: [{ label: "Hardware Basics", url: "https://www.netacad.com/es/courses/computer-hardware-basics?courseLang=es-XL&instance_id=bccb74b2-494d-4ded-9c09-259ae2429c18" }],
     description: "Fundamentos esenciales de arquitectura de computadoras y soporte técnico inicial.",
     certification: "Cisco IT Essentials",
-    prepNote: "⚠️ IMPORTANTE: Llevar este curso antes de iniciar el PRIMER CICLO para nivelar conceptos de hardware.",
+    prepNote: "⚠️ NIVELACIÓN: Llevar este curso antes de iniciar el PRIMER CICLO para conocer los componentes físicos.",
     linkedinUrl: createLinkedInUrl("Soporte de Hardware", 1)
   },
 
@@ -40,7 +40,7 @@ export const COURSES: Course[] = [
     links: [{ label: "Ciberseguridad Intro", url: "https://www.netacad.com/es/courses/introduction-to-cybersecurity?courseLang=es-XL&instance_id=0d50742d-45ba-4a91-87b7-3a10282bcd2c" }],
     description: "Conceptos básicos de seguridad digital y protección de redes.",
     certification: "Cisco Intro Cert",
-    prepNote: "💡 Recomendación: Completar este curso antes de iniciar el SEGUNDO CICLO para entender la seguridad en redes.",
+    prepNote: "💡 PREPARACIÓN: Completar este curso antes de iniciar el SEGUNDO CICLO para entender la protección de datos.",
     linkedinUrl: createLinkedInUrl("Informática Aplicada", 2)
   },
   {
@@ -87,7 +87,7 @@ export const COURSES: Course[] = [
     links: [{ label: "Python Essentials 2", url: "https://www.netacad.com/courses/python-essentials-2?courseLang=es-XL&instance_id=e679ad5b-1a5e-4b29-860b-39fa2807240f" }],
     description: "Desarrollo de scripts avanzados para gestión de dispositivos.",
     certification: "PCAP Python Institute",
-    prepNote: "🚀 Recomendación: Finalizar Python 2 antes de iniciar el TERCER CICLO para dominar la automatización.",
+    prepNote: "🚀 RECOMENDACIÓN: Finalizar Python 2 antes de iniciar el TERCER CICLO para dominar la automatización avanzada.",
     linkedinUrl: createLinkedInUrl("Programación Móvil", 3)
   },
   {
@@ -150,7 +150,7 @@ export const COURSES: Course[] = [
     links: [{ label: "CommScope WR9100", url: "https://www.commscopetraining.com/courses/cabling/wr9100/residentialmdu-cabling-solutions" }],
     description: "Implementación de redes físicas y soluciones CommScope.",
     certification: "CommScope Specialist",
-    prepNote: "🏗️ Recomendación: Realizar la formación técnica de CommScope antes de iniciar el CUARTO CICLO.",
+    prepNote: "🏗️ PRE-REQUISITO: Realizar la formación técnica de CommScope antes de iniciar el CUARTO CICLO.",
     linkedinUrl: createLinkedInUrl("Cableado Estructurado", 4)
   },
   {
@@ -196,7 +196,7 @@ export const COURSES: Course[] = [
     ],
     description: "Conectividad de sensores y automatización de procesos industriales.",
     certification: "Cisco IoT Cert",
-    prepNote: "🤖 Recomendación: Completar los módulos de IoT antes de iniciar el QUINTO CICLO para proyectos de domótica.",
+    prepNote: "🤖 PREPARACIÓN: Completar los módulos de IoT antes de iniciar el QUINTO CICLO para proyectos de domótica.",
     linkedinUrl: createLinkedInUrl("IoT Programación", 5)
   },
   {
@@ -233,28 +233,41 @@ export const COURSES: Course[] = [
   // --- CICLO 6 ---
   {
     id: 20, ciclo: 6,
-    title: "Virtualización y Cloud",
+    title: "Virtualización y Cloud Computing",
     officialName: "Cloud and Virtualization Concepts",
     category: "Virtualización",
-    links: [{ label: "NDG Cloud Concepts", url: "https://www.netdevgroup.com/online/courses/virtualization/cloud-and-virtualization-concepts" }],
-    description: "Implementación de nubes privadas e híbridas.",
-    certification: "Cloud Tech Cert",
-    prepNote: "☁️ Recomendación: Llevar este curso de nivelación Cloud antes de iniciar el SEXTO CICLO.",
+    links: [
+      { label: "NDG Cloud Concepts", url: "https://www.netdevgroup.com/online/courses/virtualization/cloud-and-virtualization-concepts" },
+      { label: "AWS Academy Cloud", url: "https://awsacademy.instructure.com/courses/156023" }
+    ],
+    description: "Implementación de nubes privadas e híbridas con AWS.",
+    certification: "AWS Cloud Practitioner",
+    prepNote: "☁️ RECOMENDACIÓN: Llevar estos cursos Cloud antes de iniciar el SEXTO CICLO para el despliegue de infraestructuras.",
     linkedinUrl: createLinkedInUrl("Virtualización y Cloud", 6)
   },
   {
     id: 21, ciclo: 6,
+    title: "Interoperatividad Redes Industriales",
+    officialName: "Industrial Networking Essentials",
+    category: "Infraestructura",
+    links: [{ label: "Netacad Industrial", url: "https://www.netacad.com/courses/industrial-networking-essentials?courseLang=en-US&instance_id=5778eeea-95b0-47a8-a69e-d9b5e0a10474" }],
+    description: "Conexión de sistemas OT con infraestructuras IT en entornos industriales.",
+    certification: "Industrial Specialist",
+    linkedinUrl: createLinkedInUrl("Redes Industriales", 6)
+  },
+  {
+    id: 22, ciclo: 6,
     title: "Comunicaciones Inalámbricas",
     officialName: "Wi-Fi Fundamentals",
     category: "Infraestructura",
     links: [{ label: "Wi-Fi Fundamentals", url: "https://learning.cambiumnetworks.com/learn/courses/1270/enterprise-wi-fi-fundamentals-elearning?generated_by=67770&hash=1ac6be5f71ac2552b8eb56da58d422a5fc82dc7c" }],
-    description: "Diseño y optimización de redes inalámbricas corporativas.",
+    description: "Diseño y optimización de redes inalámbricas corporativas con Cambium Networks.",
     certification: "Cambium Certified",
     linkedinUrl: createLinkedInUrl("Wi-Fi Inalámbrico", 6)
   }
 ];
 
 export const FINAL_MISSION: Checkpoint = {
-  title: "Especialista en Redes 2026",
-  content: "¡Misión Cumplida! Has completado con éxito la ruta de aprendizaje de Tecsup. El éxito profesional es tuyo."
+  title: "Arquitecto de Redes 2026",
+  content: "¡Misión Cumplida! Has completado el Roadmap Profesional de Redes y Comunicaciones de Tecsup. El éxito te pertenece."
 };
