@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { COURSES, FINAL_MISSION } from './constants';
+import { COURSES, FINAL_MISSION, CREATOR } from './constants';
 import CycleMilestone from './components/CycleMilestone';
 import CourseDot from './components/CourseDot';
 
@@ -300,9 +300,16 @@ const App: React.FC = () => {
                     </a>
                   )}
                   
-                  <div className="pt-2 mt-1 border-t border-gray-100 flex items-center justify-center gap-1.5 opacity-70 hover:opacity-100 transition-opacity">
-                    <span className="text-[7px] md:text-[8px] font-black text-gray-400 uppercase tracking-widest">Desarrollado para</span>
-                    <span className="text-[7px] md:text-[8px] font-black text-[#a81d3a] uppercase tracking-widest">Especialidad de Redes</span>
+                  <div className="pt-2 mt-1 border-t border-gray-100 flex flex-col items-center justify-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
+                    <span className="text-[7px] md:text-[8px] font-black text-gray-400 uppercase tracking-widest">Desarrollado por</span>
+                    <a 
+                      href={CREATOR.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[8px] md:text-[10px] font-black text-[#a81d3a] uppercase tracking-widest hover:underline decoration-2 underline-offset-4"
+                    >
+                      {CREATOR.name}
+                    </a>
                   </div>
                </div>
             </div>

@@ -10,6 +10,12 @@ export const COLORS = {
   TEXT_LIGHT: '#ffffff',
 };
 
+// --- PERSONALIZA TU INFORMACIÓN AQUÍ ---
+export const CREATOR = {
+  name: "Milagros Ramos",
+  linkedin: "https://www.linkedin.com/in/milagros-ramos-a8676231a"
+};
+
 const LI_BASE = "https://www.linkedin.com/feed/?shareActive=true&text=";
 
 const createLinkedInUrl = (courseTitle: string, ciclo: number) => {
@@ -58,7 +64,7 @@ export const COURSES: Course[] = [
     title: "Electrónica y Hardware",
     officialName: "Conceptos Básicos de Hardware de Computadora",
     category: "Infraestructura",
-    links: [{ label: "Hardware Avanzado", url: "https://www.netacad.com/es/courses/computer-hardware-basics?courseLang=es-XL&instance_id=bccb74b2-494d-4ded-9c09-259ae2429c18" }],
+    links: [{ label: "Hardware Basics", url: "https://www.netacad.com/es/courses/computer-hardware-basics?courseLang=es-XL&instance_id=bccb74b2-494d-4ded-9c09-259ae2429c18" }],
     description: "Análisis profundo de componentes electrónicos y mantenimiento avanzado.",
     certification: "Hardware Advanced Badge",
     linkedinUrl: createLinkedInUrl("Electrónica y Hardware", 2)
