@@ -40,12 +40,15 @@ export const COURSES: Course[] = [
   // --- CICLO 2 ---
   {
     id: 2, ciclo: 2,
-    title: "Informática Aplicada (Redes)",
-    officialName: "Introducción a la Ciberseguridad",
+    title: "Informática Aplicada",
+    officialName: "Tecsup - Program 3 game",
     category: "Programación",
-    links: [{ label: "Ciberseguridad Intro", url: "https://www.netacad.com/es/courses/introduction-to-cybersecurity?courseLang=es-XL&instance_id=0d50742d-45ba-4a91-87b7-3a10282bcd2c" }],
-    description: "Conceptos básicos de seguridad digital y protección de redes.",
-    certification: "Cisco Intro Cert",
+    links: [
+      { label: "Tecsup - Program 3 game", url: "https://www.edclub.com/sportal/program-3.game" },
+      { label: "Ciberseguridad Intro", url: "https://www.netacad.com/es/courses/introduction-to-cybersecurity?courseLang=es-XL&instance_id=0d50742d-45ba-4a91-87b7-3a10282bcd2c" }
+    ],
+    description: "Desarrollo de habilidades de digitación técnica y fundamentos de seguridad digital.",
+    certification: "Tecsup Digital Badge",
     prepNote: "💡 PREPARACIÓN: Completar este curso antes de iniciar el SEGUNDO CICLO para entender la protección de datos.",
     linkedinUrl: createLinkedInUrl("Informática Aplicada", 2)
   },
